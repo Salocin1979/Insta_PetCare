@@ -1,0 +1,53 @@
+<div class="banner_outfits container-fluid p-5">
+  <h1>All your animals!</h1>
+    <div class="row pt-5 pb-2"></div>
+      <% if user_signed_in? %>
+      <div class="col-sm">
+        <button class="btn-primary"><%= link_to 'Add a new animal', new_animal_path %></button>
+      </div>
+        <% else %>
+          <button class="btn-primary">
+            <%= link_to "", new_user_session_path, class: "nav-link" %>
+          </button>
+        <% end %>
+          <div class="row pt-2 pb-5"></div>
+            <div class="col">
+              <p>All <%= Animal.count %> animals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mb-3 pt-5 pb-5">
+  <div class="row">
+    <% @animals.each do |animal| %>
+      <div class="col-lg-3 col-md-6 col-sm-1 mt-3">
+        <div class="outfit-card">
+          <div class="outfit-card-image" style="background-image: url('<%= animal.picture_url %>')"></div>
+          <div class="outfit-card-content">
+            <h4 class="outfit-card-title">
+              <%= animal.name %></h4>
+                <div class="outfit-card-details">
+                  <p class="outfit-card-price"><%= animal %> / day</p>
+                    <div class="outfi-card-actions">
+                      <% if user_signed_in? %>
+                        <li class="nav-item active">
+                          <%= link_to 'More info', animal_path(animal) %>
+                        </li>
+                      <% else %>
+                          <%= link_to "More info", new_user_session_path, class: "nav-link" %>
+                      <% end %>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pt-5 pb-5"></div>
