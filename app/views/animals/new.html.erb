@@ -7,7 +7,7 @@
           <%= f.input :name %>
           <%= f.input :age %>
           <%= f.input :weight %>
-          <%= f.input :specie %>
+          <%= f.input :specie, collection: ["Cats", "Dogs", "Chicken"] %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>
