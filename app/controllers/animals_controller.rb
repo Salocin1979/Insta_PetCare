@@ -7,12 +7,13 @@ class AnimalsController < ApplicationController
 
     def new
         @animal = Animal.new
+        @species = Specie.all
     end
 
     def create
         @animal = Animal.new(animal_params)
         @animal.user = current_user
-        @animal.specie = Specie.find_by(name: animal_params[:specie])
+        # @animal.specie = Specie.find_by(id:animal_params [:specie_id])
         if @animal.save
           redirect_to animals_path(@animal)
         else
@@ -40,7 +41,7 @@ class AnimalsController < ApplicationController
     end
 
     def animal_params
-        params.require(:animal).permit(:name, :age, :weight, :user_id, :specie)
+        params.require(:animal).permit(:name, :age, :weight, :user_id, :specie_id)
     end
 
 end

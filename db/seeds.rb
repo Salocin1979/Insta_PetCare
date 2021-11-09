@@ -6,17 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # puts "Cleaning up database..."
-# Animal.destroy_all
-# User.destroy_all
-# puts "Database cleaned"
+Animal.destroy_all
+User.destroy_all
+puts "Database cleaned"
 
-# puts "Creating a user in the database..."
-# user_one = User.create!(email: "jeanpierre@gmail.com", password:"123456")
+puts "Creating a user in the database..."
+user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456")
 
-# puts "Creating the outfit in the database..."
-# Animal.create!  name: "Willy",
-#                 age: "2",
-#                 weight: "5",
-#                 specie: "Dogs",
-#                 user: user_one
-# puts "Finished building up database..."
+puts "Creating species list"
+Specie.create! name: "Dog"
+Specie.create! name: "Cat"
+Specie.create! name: "Chicken"
+
+puts "Creating the outfit in the database..."
+Animal.create!  name: "Willy",
+                age: "2",
+                weight: "5",
+                specie: Specie.find_by(name: "Dog"),
+                user: user_one
+puts "Finished building up database..."

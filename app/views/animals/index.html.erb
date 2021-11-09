@@ -26,13 +26,12 @@
     <% @animals.each do |animal| %>
       <div class="col-lg-3 col-md-6 col-sm-1 mt-3">
         <div class="outfit-card">
-          <div class="outfit-card-image" style="background-image: url('<%= animal.picture_url %>')"></div>
           <div class="outfit-card-content">
             <h4 class="outfit-card-title">
               <%= animal.name %></h4>
                 <div class="outfit-card-details">
                   <p class="outfit-card-price"><%= animal %> / day</p>
-                    <div class="outfi-card-actions">
+                    <div class="outfit-card-actions">
                       <% if user_signed_in? %>
                         <li class="nav-item active">
                           <%= link_to 'More info', animal_path(animal) %>
@@ -43,7 +42,6 @@
                     </div>
                 </div>
               </div>
-            </div>
           </div>
        <% end %>
       </div>
