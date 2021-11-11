@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
     before_action :set_animal, only: [:show, :edit, :update, :destroy]
+    has_one_attached :photo
 
     def index
       @animals = Animal.all
@@ -41,7 +42,7 @@ class AnimalsController < ApplicationController
     end
 
     def animal_params
-        params.require(:animal).permit(:name, :age, :weight, :user_id, :specie_id)
+        params.require(:animal).permit(:name, :age, :weight, :user_id, :specie_id, :photo)
     end
 
 end
