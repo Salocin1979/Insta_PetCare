@@ -6,14 +6,13 @@
         <button class="btn-primary"><%= link_to 'Add a new animal', new_animal_path %></button>
       </div>
         <% else %>
-          <button class="btn-primary">
-            <%= link_to "", new_user_session_path, class: "nav-link" %>
+          <button class="btn-primary"><%= link_to "", new_user_session_path, class: "nav-link" %>
           </button>
         <% end %>
           <div class="row pt-2 pb-5"></div>
             <div class="col">
               <p>All <%= Animal.count %> animals.</p>
-              <%# cl_image_tag @animals.photo.key, height: 300, width: 400, crop: :fill %>
+             <%# <%= cl_image_tag @animals.photo.key, height: 300, width: 400, crop: :fill %>
             </div>
           </div>
         </div>
