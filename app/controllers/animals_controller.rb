@@ -1,6 +1,5 @@
 class AnimalsController < ApplicationController
     before_action :set_animal, only: [:show, :edit, :update, :destroy]
-    has_one_attached :photo
 
     def index
       @animals = Animal.all
