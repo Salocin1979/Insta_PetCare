@@ -11,7 +11,8 @@ User.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
-user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456")
+user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: true)
+user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
 
 puts "Creating species list"
 Specie.create! name: "Dog"
