@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   resources :animals do
   end
-  resources :consultations, only: [:new, :create, :show] 
+  resources :consultations, only: [:new, :create, :show] do
     resources :prescriptions, only: [:index, :new, :create, :show, :edit]
-  
+  end
 end
