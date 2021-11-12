@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <% if user_signed_in? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/fe/d2/7f/fed27f20821ebbb0fd42c0aed0e2f81b.jpg);">
+      <div class="container">
+        <%= link_to "Add a new pet", "#", class: "btn btn-ghost" %>
+        <h1>Welcome, <%= current_user.email %> </h1> 
+        <p>How can we help you?</p>
+      </div>
+    </div>
+    <div class="list-cards ">
+      <div class= "card-homepage" style = "margin-bottom: 10px;">
+  
+      </div>
+
+      <div class= "card-homepage" style = "margin-bottom: 10px;">
+  
+      </div>
+
+    </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  <% else %>
+     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+</div>
