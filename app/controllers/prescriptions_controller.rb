@@ -7,6 +7,7 @@ class PrescriptionsController < ApplicationController
 
     def new
        if is_veterinarian = true
+        consulation = Consultation.find(params[:consultation_id])
         @prescription = Prescription.new
         #@consultations = Consultation.all
        end
@@ -36,7 +37,7 @@ class PrescriptionsController < ApplicationController
     end
 
     def prescription_params
-        params.require(:prescription).permit(:date, :content ) #:consultation_id
+        params.require(:prescription).permit(:date, :content, :consultation_id ) 
     end
 
 
