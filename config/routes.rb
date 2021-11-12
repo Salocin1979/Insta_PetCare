@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :animals do
   end
   resources :consultations, only: [:new, :create, :show] 
-    resources :prescriptions, only: [:new, :create, :show, :edit]
+    resources :prescriptions, only: [:index, :new, :create, :show, :edit]
   
 end
