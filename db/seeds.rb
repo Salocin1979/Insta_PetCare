@@ -25,5 +25,5 @@ Animal.create!  name: "Balto",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one
-                photo: "Balto"
+                photo: "Balto",
 puts "Finished building up database..."
