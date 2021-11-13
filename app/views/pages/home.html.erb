@@ -1,2 +1,47 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <% if user_signed_in? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/fe/d2/7f/fed27f20821ebbb0fd42c0aed0e2f81b.jpg);">
+      <div class="container">
+        <%= link_to "Add a new pet", "#", class: "btn btn-ghost" %>
+        <h1>Welcome, <%= current_user.email %> </h1> 
+        <p>How can we help you?</p>
+      </div>
+    </div>
+    <div class="list-cards ">
+      <div class= "card-homepage" style = "margin-bottom: 20px;">
+        <strong> Talk to a vet now!</strong>   
+        <img class="image-card-homepage" src="https://cdn2.iconfinder.com/data/icons/thin-line-icons-for-seo-and-development-1/64/SEO_usability_audit_search_-50.png"> 
+      </div>
+      <div class= "card-homepage" style = "margin-bottom: 20px;">
+        <strong> Check List of Symptoms</strong>   
+        <img class="image-card-homepage" src="https://cdn4.iconfinder.com/data/icons/computer-and-web-2/500/Survey-50.png"> 
+      </div>
+      <div class= "card-homepage" style = "margin-bottom: 20px;">
+        <strong> List of Pets </strong>   
+        <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png"> 
+      </div>
+      <div class= "card-homepage" style = "margin-bottom: 20px;">
+        <strong> Prescriptions </strong>   
+        <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/medical-equipment-in-line-form/64/medical_prescription-50.png"> 
+      </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  <% else %>
+     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+</div>
