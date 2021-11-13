@@ -75,6 +75,14 @@ ActiveRecord::Schema.define(version: 2021_11_13_113719) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "symptoms", force: :cascade do |t|
+    t.string "description"
+    t.text "suggestion"
+    t.integer "specie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
