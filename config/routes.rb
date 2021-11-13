@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :animals
   resources :symptoms
+  resources :consultations, only: [:new, :create, :show]
 end
