@@ -1,0 +1,29 @@
+<div class= "container-fluid">
+  <div class="row title_bookings pt-5 pb-5">
+    <h1>All your prescriptions </h1>
+      <div class="pt-2 pb-5"></div>
+      <button class="btn-primary">
+        <%= link_to "Create a new prescription", new_prescription_path%>
+      </button>
+</div>
+
+<div class= "container-fluid">
+     <% @prescriptions.each do |prescription| %>
+      <div class="card-product">
+          <div class="card-product-infos">
+            <h5><strong><%= xxxxxxx %></strong></h5> <
+            <p><%= prescription.content %></p>
+          </div>
+          <div class="card-product-infos-dates">
+              <h5><strong> Prescriptions date:</strong></h5>
+              <p> Date: <%= prescription.date %></p>
+          </div>
+          <div class="card-product-infos-price">
+          <h5><strong>Price:</strong></h5>
+            <i class="material-icons mr-2">RS</i> <%=  xxxx %> %# booking.outfit.price %>
+          </div>
+          </div>
+        </div>
+      <% end %>
+   </div>
+</div>
