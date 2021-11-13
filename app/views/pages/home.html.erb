@@ -1,47 +1,99 @@
-<div>
-  <% if user_signed_in? %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/fe/d2/7f/fed27f20821ebbb0fd42c0aed0e2f81b.jpg);">
-      <div class="container">
-        <%= link_to "Add a new pet", "#", class: "btn btn-ghost" %>
-        <h1>Welcome, <%= current_user.email %> </h1> 
-        <p>How can we help you?</p>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1">
+    <title>Mobile UI</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <div class="info">
+                <p>Hello <%= current_user.email %></p>
+                <p>How can we help you today</p>
+            </div>
+            <div class="img" style="background-image: url(img/user.jpg)"></div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="categories section-wrapper">
+            <div class="flex-header">
+                <h2>Talk to a vet now!</h2>
+                <a href="category.html">Start a Call</a>
+            </div>
+        </div>
+        <p></p>
+        <div class="popular section-wrapper">
+          <div class="flex-header">
+              <h2>My pet symptoms!</h2>
+              <a href="">See all</a>
+          </div>
+        </div>
+        
+        <div class="promo">
+            <div class="items promo-items">
+                <div class="promo-item">
+                    <div class="promo-img" style="background-image: url(img/apples.png)"></div>
+                    <div class="promo-info">
+                        <h3>Balto</h3>
+                        <p>2 years old</p>
+                        <a href="">View</a>
+                    </div>
+                </div>
+                <div class="promo-item">
+                    <div class="promo-img" style="background-image: url(img/banana.png)"></div>
+                    <div class="promo-info">
+                        <h3>Will</h3>
+                        <p>3 years old</p>
+                        <a href="">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
+    
+        <div class="popular section-wrapper">
+            <div class="flex-header">
+                <h2>My prescriptions</h2>
+                <a href="">See all</a>
+            </div>
+        </div>
+
+    </main>
+    
+    
+    <div class="bottom-nav">
+        <div class="bottom-inner">
+            <div class="bottom-main">
+                <div class="nav-items">
+                    <div class="nav-item">
+                        <span class="las la-home"></span>
+                        <p>Home</p>
+                    </div>
+                    <div class="nav-item">
+                        <span class="las la-shopping-bag"></span>
+                        <p>Pets</p>
+                    </div>
+                </div>
+                <div class="nav-item-main">
+                    <div>
+                        <span class="las la-shopping-cart"></span>
+                    </div>
+                </div>
+                <div class="nav-items">
+                    <div class="nav-item">
+                        <span class="las la-gift"></span>
+                        <p></p>
+                    </div>
+                    <div class="nav-item">
+                        <span class="las la-ellipsis-h"></span>
+                        <p>More</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="list-cards ">
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> Talk to a vet now!</strong>   
-        <img class="image-card-homepage" src="https://cdn2.iconfinder.com/data/icons/thin-line-icons-for-seo-and-development-1/64/SEO_usability_audit_search_-50.png"> 
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> Check List of Symptoms</strong>   
-        <img class="image-card-homepage" src="https://cdn4.iconfinder.com/data/icons/computer-and-web-2/500/Survey-50.png"> 
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> List of Pets </strong>   
-        <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png"> 
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> Prescriptions </strong>   
-        <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/medical-equipment-in-line-form/64/medical_prescription-50.png"> 
-      </div>
-    </div>
-    </div>
-</div>
 
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-  <% else %>
-     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-  <% end %>
-</div>
+</body></html>
