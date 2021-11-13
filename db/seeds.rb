@@ -20,9 +20,10 @@ Specie.create! name: "Cat"
 Specie.create! name: "Chicken"
 
 puts "Creating the outfit in the database..."
-Animal.create!  name: "Willy",
+Animal.create!  name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one
+                photo: "Balto"
 puts "Finished building up database..."
