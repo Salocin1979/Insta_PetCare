@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_165924) do
+ActiveRecord::Schema.define(version: 2021_11_13_113718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 2021_11_11_165924) do
     t.index ["user_id"], name: "index_animals_on_user_id"
   end
 
+  create_table "consultations", force: :cascade do |t|
+    t.string "url_room", default: "www.zoom.com"
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
+    t.index ["animal_id"], name: "index_consultations_on_animal_id"
+    t.index ["user_id"], name: "index_consultations_on_user_id"
+  end
+
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -73,4 +84,6 @@ ActiveRecord::Schema.define(version: 2021_11_11_165924) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "animals", "species", column: "specie_id"
   add_foreign_key "animals", "users"
+  add_foreign_key "consultations", "animals"
+  add_foreign_key "consultations", "users"
 end
