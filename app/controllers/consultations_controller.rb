@@ -5,12 +5,13 @@ class ConsultationsController < ApplicationController
 
   def new
     @consultation = Consultation.new
-    @user = current_user
-    @animals = Animal.find(:all)
+    # @animal = Animal.find(:animal_id)
   end
 
   def create
-    @consultation = Consultation.create(params[:consultation])
+    @consultation = Consultation.new(consultation_params)
+    @consultation.user = current_user
+    @consultation.animal = Animal.find(consultation_params[:animal_id])
     if @consultation.save
       redirect_to consultations_path
     else
@@ -19,27 +20,31 @@ class ConsultationsController < ApplicationController
   end
 
 
-  # def show
-  #   @consultation = Consultation.find(params[:animal_id])
-  #   authorize @consultation
-  #   @token = generate_token(@consultation)
-  # end
+  def show
+    @consultation = Consultation.find(params[:animal_id, :user_id])
+    # @token = generate_token(@consultation)
+  end
   
     
 
   private
+  
+  def consultation_params
+    params.require(:consultation).permit(:date, :animal_id)
 
-  def generate_token(consultation)
-    # Create an Access Token
-    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
-        ttl: 14400,
-        identity: current_user.email
-    # Grant access to Video
-    grant = Twilio::JWT::AccessToken::VideoGrant.new
-    grant.room = consultation.url_room
-    token.add_grant grant
-    # Serialize the token as a JWT
-    token.to_jwt
   end
+
+  # def generate_token(consultation)
+  #   # Create an Access Token
+  #   token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
+  #       ttl: 14400,
+  #       identity: current_user.email
+  #   # Grant access to Video
+  #   grant = Twilio::JWT::AccessToken::VideoGrant.new
+  #   grant.room = consultation.url_room
+  #   token.add_grant grant
+  #   # Serialize the token as a JWT
+  #   token.to_jwt
+  # end
 
 end
