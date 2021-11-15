@@ -19,11 +19,15 @@ Specie.create! name: "Dog"
 Specie.create! name: "Cat"
 Specie.create! name: "Chicken"
 
-puts "Creating the outfit in the database..."
+puts "Creating the animal in the database..."
 Animal.create!  name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one
                 photo: "Balto",
+
+puts "Creating the symptoms in the database"
+
+
 puts "Finished building up database..."

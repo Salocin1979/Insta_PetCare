@@ -1,6 +1,7 @@
 <h1>Your Consultations</h1>
 
-<%= simple_form_for [@animal, @consultation] do |f| %>
+<%= simple_form_for [@animal, @user, @consultation] do |f| %>
   <%= f.association :animal, selected: @animal %>
+  <%= f.association :user, selected: @user %>
   <%= f.submit "Submit", class: "btn btn-cta" %>
 <% end %>
