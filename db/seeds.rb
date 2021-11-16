@@ -8,6 +8,8 @@
 # puts "Cleaning up database..."
 Animal.destroy_all
 User.destroy_all
+Symptom.destroy_all
+Specie.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
@@ -20,6 +22,7 @@ Specie.create! name: "Cat"
 Specie.create! name: "Chicken"
 
 puts "Creating the animal in the database..."
+<<<<<<< HEAD
 Animal.create!  name: "Balto",
                 age: "2",
                 weight: "5",
@@ -35,4 +38,19 @@ Safety should be the primary concern. Avoid situations that may bring on an aggr
 Feed the dog in a confined space and do not give it items that might incite aggressive behavior. Confine it to areas where people can neither be heard nor seen. Finally, teach your dog to wear a head halter and basket muzzle.
 In extreme cases, it may be necessary to put the dog down (euthanize), as it is sometimes the only way to assuredly prevent your dog from injuring others -- especially those that have already been involved in an incident or incidents."
                 specie_id:"1"
+=======
+Animal.create!( name: "Balto",
+                age: "2",
+                weight: "5",
+                specie: Specie.find_by(name: "Dog"),
+                user: user_one)
+                # photo: "Balto")
+
+puts "Creating the symptoms in the database"
+Symptom.create!(suggestion: "Diahrea",
+                description:"Hot water",
+                specie: Specie.find_by(name:"Dog"))
+
+
+>>>>>>> master
 puts "Finished building up database..."

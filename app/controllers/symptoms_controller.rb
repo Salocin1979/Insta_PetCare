@@ -1,4 +1,5 @@
 class SymptomsController < ApplicationController
+<<<<<<< HEAD
 
   def index
       @symptoms = Symptom.all
@@ -8,4 +9,6 @@ class SymptomsController < ApplicationController
       @symptoms =Symptom.find (params[id])
 
     end
+=======
+>>>>>>> master
 end
