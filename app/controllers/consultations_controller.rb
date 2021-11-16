@@ -21,7 +21,7 @@ class ConsultationsController < ApplicationController
 
 
   def show
-    @consultation = Consultation.find(params[:animal_id, :user_id])
+    @consultation = Consultation.find(consultation_params[:animal_id])
     # @token = generate_token(@consultation)
   end
   
