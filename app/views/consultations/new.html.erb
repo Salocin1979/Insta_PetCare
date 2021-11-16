@@ -2,6 +2,6 @@
 
 <%= simple_form_for [@animal, @user, @consultation] do |f| %>
   <%= f.association :animal, selected: @animal %>
-  <%= f.association :user, selected: @user %>
+  <%= f.association :user, label_method: :first_name %>
   <%= f.submit "Submit", class: "btn btn-cta" %>
 <% end %>

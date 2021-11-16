@@ -8,6 +8,8 @@
 # puts "Cleaning up database..."
 Animal.destroy_all
 User.destroy_all
+Symptom.destroy_all
+Specie.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
@@ -24,13 +26,13 @@ Animal.create!( name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
-                user: user_one
-                photo: "Balto")
+                user: user_one)
+                # photo: "Balto")
 
-# puts "Creating the symptoms in the database"
-# Symptom.create!(suggestion:,
-#                 description:,
-#                 specie_id:1)
+puts "Creating the symptoms in the database"
+Symptom.create!(suggestion: "Diahrea",
+                description:"Hot water",
+                specie: Specie.find_by(name:"Dog"))
 
 
 puts "Finished building up database..."
