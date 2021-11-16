@@ -5,6 +5,7 @@ class SymptomsController < ApplicationController
     end
 
     def show
+      @symptoms =Symptom.find (params[id])
 
     end
 end
