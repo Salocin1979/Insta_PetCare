@@ -19,7 +19,7 @@ class PrescriptionsController < ApplicationController
             @prescription = Prescription.new(prescription_params)
             @prescription.consultation = @consultation
             if @prescription.save
-                redirect_to consultation_prescription_path
+                redirect_to consultation_prescription_path(@consultation)
             else
                 redirect_to new_consultation_prescription_path(@consultation)
             end
@@ -27,7 +27,7 @@ class PrescriptionsController < ApplicationController
     end
 
     def show
-      
+        @prescription.consultation = @consultation
     end
 
     private
