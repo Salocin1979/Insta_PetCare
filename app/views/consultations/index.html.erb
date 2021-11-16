@@ -1,0 +1,32 @@
+<div class="row-fluid">
+<div class="span5 offset1">
+<span class="label label-important"><h1>Listing consultations</h1></span>
+<br />
+<br />
+<br />
+<table class="table table-bordered table-condensed table-stripe table-hover">
+  <tr>
+    <th>Consultation date</th>
+    <th>Reminder</th>
+    <th>Reason</th>
+    <th>Veterinary</th>
+    <th>Customer</th>
+    <th>Pet</th>
+    <th></th>
+  </tr>
+
+<% @consultations.each do |consultation| %>
+  <tr>
+    <td><i class="icon-calendar"></i><%= consultation.date %></td>
+    
+    
+    <%# <td><%= link_to '', edit_consultation_path(consultation), class: 'icon-pencil' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%# <%= link_to 'New Appointment', new_appointment_path %>
+</div>
+</div>
