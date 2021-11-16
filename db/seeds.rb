@@ -25,9 +25,12 @@ Animal.create!  name: "Balto",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one
-                photo: "Balto",
+                photo: "Balto"
 
-puts "Creating the symptoms in the database"
+# puts "Creating the symptoms in the database"
+# Symptom.create!(suggestion:,
+#                 description:,
+#                 specie_id:1)
 
 
 puts "Finished building up database..."
