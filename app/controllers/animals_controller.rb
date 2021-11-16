@@ -22,7 +22,7 @@ class AnimalsController < ApplicationController
     end
 
     def show
-      
+      @prescriptions = @animal.prescriptions
     end
 
     def edit
