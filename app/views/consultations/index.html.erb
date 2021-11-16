@@ -6,19 +6,21 @@
 <br />
 <table class="table table-bordered table-condensed table-stripe table-hover">
   <tr>
-    <th>Consultation date</th>
-    <th>Reminder</th>
-    <th>Reason</th>
-    <th>Prescription</th>
-    <th>Customer</th>
-    <th>Pet</th>
+    <th>Doctor</th>
+      <th>Date visit</th>
+      <th>Animal</th>
+      <th>Customer</th>
+      <th>Prescription</th>
+      <%# <th>Symptoms</th> %>
     <%# <th></th> %>
   </tr>
 
 <% @consultations.each do |consultation| %>
   <tr>
-    <td><i class="icon-calendar"></i><%= consultation.date %></td>
-    
+    <td><%= consultation.animal.user.first_name %></td>
+    <td><%= consultation.date %></td>
+    <td><%= consultation.animal.name %></td>
+    <td><%= consultation.user.first_name %></td>
     
     <%# <td><%= link_to '', edit_consultation_path(consultation), class: 'icon-pencil' %></td>
   </tr>
