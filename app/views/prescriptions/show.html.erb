@@ -10,7 +10,7 @@
         <p><%= @prescription.content %></p>
       </div>
       <div class="col-sm">
-        <button class="btn-primary"><%= 'Print to pdf' %></button>
+        <%= link_to "Download",consultation_prescription_path(prescription, format: :pdf), class: 'button' %>
       </div>
     </div>
   </div>
