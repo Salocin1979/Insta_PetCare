@@ -17,18 +17,25 @@ user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "
 user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
 
 puts "Creating species list"
-Specie.create!(name: "Dog")
-Specie.create!(name: "Cat")
-Specie.create!(name: "Chicken")
+specie_dog = Specie.create!(name: "Dog")
+specie_cat = Specie.create!(name: "Cat")
+specie_chicken = Specie.create!(name: "Chicken")
 
 puts "Creating the animal in the database..."
-
-Animal.create!(name: "Balto",
+file = URI.open('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg')
+animal_one = Animal.create!(name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
+<<<<<<< HEAD
                 user: user_one,
                 photo: "Balto")
+=======
+                user: user_one)
+animal_one.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+
+>>>>>>> 60aa4c1ce7520c5c162ae90150a08e0e789bb155
 puts "Creating the symptoms in the database..."
 
 Symptom.create!(suggestion: "Biting",
@@ -71,12 +78,12 @@ Symptom.create!(suggestion:"Pectus Excavatum in Dogs",
 
 In some dogs, a splint application will work to reduce the mild defects. However, in cases of moderate or severe inward sinking of the sternum, surgery is indicated for correction of the defects. The technique used by your veterinary surgeon will depend on your dog's age and the extent of the problem. Dogs with respiratory problems that are directly related to this condition, meanwhile, generally improve substantially after surgery and will start breathing more comfortably.",
                 specie: specie_dog)
- Symptom.create!(suggestion:"Urine Crystals in Dogs",
+Symptom.create!(suggestion:"Urine Crystals in Dogs",
                 description: "Treatment will involve managing clinically important crystalluria by eliminating or controlling the underlying cause(s) or associated risk factors.
 
 Treatment will also work to minimize clinically important crystalluria by increasing urine volume, encouraging complete and frequent voiding, modifying the diet, and in some instances, by appropriate drug therapy.",
                 specie: specie_dog)
- Symptom.create!(suggestion:"Blind Quiet Eye in Dogs",
+Symptom.create!(suggestion:"Blind Quiet Eye in Dogs",
                 description: "Your veterinarian will try to localize the disease and will often refer you to a veterinary ophthalmologist. Unfortunately, there is no effective treatment for Blind Quiet Eye brought on by SARDS, progressive retinal atrophy, optic nerve atrophy, or optic nerve hypoplasia. However, cataracts, luxated lenses, and some forms of retinal detachment may be treated surgically.
 
 In addition, dogs with retinal detachment should have their exercise severely restricted until the retina is firmly reattached. These patients should also be switched to a calorie-restricted diet to prevent obesity, which could occur due to reduced activity.",
