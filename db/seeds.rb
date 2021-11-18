@@ -27,8 +27,8 @@ Animal.create!( name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
-                user: user_one)
-#               photo: "Balto",
+                user: user_one,
+                photo: "Balto")
 puts "Creating the symptoms in the database..."
 
 Symptom.create!(suggestion: "Biting",
