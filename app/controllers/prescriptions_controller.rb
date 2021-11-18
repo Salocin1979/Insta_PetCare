@@ -1,32 +1,33 @@
 class PrescriptionsController < ApplicationController
-    before_action :set_animal, only: [:show, :edit]
+    before_action :set_prescription, only: [:show, :edit]
 
     def index
-      @prescriptions = Prescription.all
+       @prescriptions = Prescription.all.where(consultation_id: params[:consultation_id])
     end
 
     def new
        if is_veterinarian = true
-        @prescription = Prescription.new
-        #@consultations = Consultation.all
+       @consultation =  Consultation.find(params[:consultation_id])
+       @prescription = Prescription.new
+       #@consultations = Consultation.all
        end
     end
 
     def create
         if is_veterinarian = true
             @prescription = Prescription.new(prescription_params)
-            #@animal.user = current_user
-            # @animal.specie = Specie.find_by(id:animal_params [:specie_id])
+            @consultation = Consultation.find(params[:consultation_id])
+            @prescription.consultation = @consultation
             if @prescription.save
-                redirect_to prescription_path(@prescription)
+                redirect_to consultation_prescriptions_path
             else
-                render :new
+                redirect_to new_consultation_prescription_path(@consultation)
             end
         end
     end
 
     def show
-      
+        
     end
 
     private
@@ -36,7 +37,7 @@ class PrescriptionsController < ApplicationController
     end
 
     def prescription_params
-        params.require(:prescription).permit(:date, :content ) #:consultation_id
+        params.require(:prescription).permit(:date, :content) 
     end
 
 
