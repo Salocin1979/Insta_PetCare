@@ -9,6 +9,7 @@
           <th>Number</th>
           <th> Date </th>
           <th>Pet</th>
+          <th>PDF</th>
           <th>Show</th>
         </tr>
       <% @prescriptions.each do |prescription| %>
@@ -18,7 +19,7 @@
           <td><i class="icon-calendar"></i><%= prescription.date %></td>
          
           <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
-          
+          <td> <%= link_to 'PDF', consultation_prescription_path(prescription.consultation, prescription, format: :pdf) %></td>   
           <td> <%= link_to 'Show', consultation_prescription_path(prescription.consultation, prescription) %></td>   
 
         </tr>
