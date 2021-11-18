@@ -17,7 +17,7 @@ user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "
 user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
 
 puts "Creating species list"
-Specie.create!(name: "Dog")
+specie_dog = Specie.create!(name: "Dog")
 Specie.create!(name: "Cat")
 Specie.create!(name: "Chicken")
 
@@ -27,8 +27,8 @@ Animal.create!( name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
-                user: user_one)
-#                photo: "Balto",
+                user: user_one,
+                photo: "Balto")
 puts "Creating the symptoms in the database..."
 Symptom.create!(suggestion: "Biting",
                 description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
