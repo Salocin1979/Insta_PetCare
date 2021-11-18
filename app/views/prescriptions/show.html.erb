@@ -1,0 +1,17 @@
+<div class= "container-fluid">
+  <div class="row title_prescriptions pt-5 pb-5">
+    <h1>Prescription </h1>
+  </div>
+
+  <div class= "container-fluid">
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h5><strong><%= @prescription.date %></strong></h5> 
+        <p><%= @prescription.content %></p>
+      </div>
+      <div class="col-sm">
+        <button class="btn-primary"><%= 'Print to pdf' %></button>
+      </div>
+    </div>
+  </div>
+</div>
