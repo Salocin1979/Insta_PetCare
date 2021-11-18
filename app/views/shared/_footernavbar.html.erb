@@ -4,16 +4,24 @@
                 <div class="nav-items">
                     <div class="nav-item">
                         <span class="las la-home"></span>
-                        <p>Home</p>
+                        <%# <p>Home</p> %>
+                        <%# <% if user_signed_in? %>
+                            <%# <li class="nav-item active"> %>
+                            <%= link_to "Home", "/", class: "nav-link" %>
+                            <%# </li> %>
                     </div>
                     <div class="nav-item">
                         <img src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png"> 
-                        <p>Pets</p>
+                        <%# <p>Pets</p> %>
+                        <%= link_to "Your pets", animals_path, class: "nav-link" %>
                     </div>
                 </div>
                 <div class="nav-item-main">
                     <div>
-                        <span class="las la-shopping-cart"></span>
+                        <%= link_to new_consultation_path do %>
+                        <span class="fal fa-phone fa-3x"></span> 
+                        <%# <i class="fal fa-phone fa-3x"></i> %>
+                        <% end %>
                     </div>
                 </div>
                 <div class="nav-items">
@@ -24,6 +32,7 @@
                     <div class="nav-item">
                         <span class="las la-ellipsis-h"></span>
                         <p>More</p>
+                      
                     </div>
                 </div>
             </div>

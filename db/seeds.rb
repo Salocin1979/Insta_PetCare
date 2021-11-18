@@ -22,7 +22,7 @@ Specie.create! name: "Cat"
 Specie.create! name: "Chicken"
 
 puts "Creating the animal in the database..."
-<<<<<<< HEAD
+
 Animal.create!( name: "Balto",
                 age: "2",
                 weight: "5",
@@ -30,33 +30,32 @@ Animal.create!( name: "Balto",
                 user: user_one)
 #                photo: "Balto",
 puts "Creating the symptoms in the database..."
-Symptom.create! (suggestion:"Biting",
+
+Symptom.create!(suggestion: "Biting",
                 description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
-
 Safety should be the primary concern. Avoid situations that may bring on an aggressive reaction. If your behaviorist recommends punishment/dominance-based training techniques, you may want to seek alternative help, as it may escalate aggression. There are better ways to deal with the problem.
-
 Feed the dog in a confined space and do not give it items that might incite aggressive behavior. Confine it to areas where people can neither be heard nor seen. Finally, teach your dog to wear a head halter and basket muzzle.
 In extreme cases, it may be necessary to put the dog down (euthanize), as it is sometimes the only way to assuredly prevent your dog from injuring others -- especially those that have already been involved in an incident or incidents.",
                 specie: Specie.find_by(name: "Dog"))
-Symptom.create! (suggestion:"Periodontal (Gum) Disease in Dogs",
+Symptom.create!(suggestion:"Periodontal (Gum) Disease in Dogs",
                 description: "If all teeth are in Stage 1, no further treatment will be necessary, but you need to brush your dog’s teeth daily.",
                 specie: Specie.find_by(name: "Dog"))
-Symptom.create! (suggestion:"Skin Disease, Autoimmune (Pemphigus) in Dogs",
+Symptom.create!(suggestion:"Skin Disease, Autoimmune (Pemphigus) in Dogs",
                 description: "Your dog will need to be hospitalized for supportive care if it is severely affected by the condition. Steroid therapy may be prescribed briefly to bring the condition under control. If corticosteroid and azathioprine therapy is prescribed, your dog will be switched to a low-fat diet, since these medications can dispose animals to pancreatitis. Your veterinarian will treat your dog with the drugs that are specifically suited to the form of pemphigus it has.",
                 specie: Specie.find_by(name: "Dog"))
-Symptom.create! (suggestion:"Carbon Monoxide Toxicosis in Dogs",
+Symptom.create!(suggestion:"Carbon Monoxide Toxicosis in Dogs",
                 description: "If you suspect that your dog has been subjected to excessive amounts of carbon monoxide, immediately call for veterinary help. In the meantime, remove your dog from the source of the toxic gas to a location where it can breathe fresh air. Your veterinarian will start emergency treatment to restore adequate levels of oxygen to the vital organs. Supplementation of 100 percent pure oxygen is the best method for initiating a quick recovery. Fluids will also be given to improve blood perfusion to vital organs like the brain, as well as to normalize the increased concentrations of acids in blood.",
                 specie: Specie.find_by(name: "Dog"))
-Symptom.create! (suggestion:"Heart Murmurs in Cats",
+Symptom.create!(suggestion:"Heart Murmurs in Cats",
                 description: "Unless heart failure is evident, your cat will be treated as an outpatient. The course of treatment will be determined based on the associated clinical signs. Kittens with low grade murmurs, for example, may require little or no treatment and the murmur may resolve itself within six months. Routine diagnostic imaging is recommended for cats with murmurs",
                 specie: Specie.find_by(name: "Cat"))
-Symptom.create! (suggestion:"Thunderstorm Phobias in Cats",
+Symptom.create!(suggestion:"Thunderstorm Phobias in Cats",
                 description: "It is important to avoid crate confinement, if you believe there is a risk of the cat injuring itself. Otherwise, there are forms of behavior modification or medication (e.g., antidepressants, anti-anxiety drugs) that you can request from your veterinarian.",
                 specie: Specie.find_by(name: "Cat"))
-Symptom.create! (suggestion:"Brachial Plexus Avulsion in Cats",
+Symptom.create!(suggestion:"Brachial Plexus Avulsion in Cats",
                 description: "Treatment will be based on the severity of the injury. Bandaging the foreleg and protecting it from further injury is the most common response. Anti-inflammatory drugs are commonly given to decrease swelling, and pain relievers will be prescribed if your cat appears to be suffering. Amputation is sometimes required for injuries that cannot be repaired, or under circumstances where the injury is life threatening.",
                 specie: Specie.find_by(name: "Cat"))
-Symptom.create! (suggestion:"Tetanus Bacillus Infection in Cats",
+Symptom.create!(suggestion:"Tetanus Bacillus Infection in Cats",
                 description: "In advanced stages of this disease, your cat will need to be hospitalized. Good support and constant nursing is usually required for a period of 3-4 weeks. If your cat is not able to eat on its own, your veterinarian will place a feeding tube directly into its stomach in order to maintain its energy and metabolic needs. Because this toxin attacks the muscles and nervous system, these animals are very sensitive, making forced feedings an undesirable treatment method. Such manipulations may, in fact, exacerbate the symptoms. Intravenous fluids may be started to prevent dehydration. That will be one of the primary concerns.
 
 One of the important aspects of nursing care is to keep the cat in an environment of low light and low noise, as these animals are extremely sensitive to touch, sound, and light.

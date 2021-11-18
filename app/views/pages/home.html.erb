@@ -10,8 +10,10 @@
     <header>
         <nav>
             <div class="info">
-                <p>Hello <%= current_user.email %></p>
+                <% if user_signed_in? %>
+                <p>Hello <%= current_user.first_name %></p>
                 <p>How can we help you today</p>
+                <% end %>
             </div>
         </nav>
     </header>
@@ -20,14 +22,19 @@
         <div class="categories section-wrapper">
             <div class="flex-header">
                 <h2>Talk to a vet now!</h2>
-                <a href="category.html">Start a Call</a>
+                  <%= link_to new_consultation_path do %>
+                    <a href="category.html">Start a Call</a>
+                  <% end %>
             </div>
         </div>
         <p></p>
         <div class="popular section-wrapper">
           <div class="flex-header">
               <h2>My pet symptoms!</h2>
-              <a href="">See all</a>
+                <%# <%= link_to symptom_path do %> 
+                  <a href="">See all</a>
+                <%# <% end %> 
+              
           </div>
         </div>
         
@@ -59,7 +66,7 @@
                 <a href="">See all</a>
             </div>
         </div>
-=======
+=====
 <div>
   <% if user_signed_in? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/fe/d2/7f/fed27f20821ebbb0fd42c0aed0e2f81b.jpg);">
@@ -95,7 +102,7 @@
         <strong> Prescriptions </strong>
         <%# <%= link_to posts_path do %>
           <%# <%= image_tag "image" %>
-        <%# <% end %> 
+        <% end %>
         <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/medical-equipment-in-line-form/64/medical_prescription-50.png"> 
       </div>
     </div>
