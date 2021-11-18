@@ -2,13 +2,12 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @user = current_user
     @animals = Animal.all
-    @animals.prescription
-  
-  
-  
-  
-  
+    @animal.user = current_user
+    
+    @prescriptions = Prescription.all
+    raise
+
+    
   end
 end
