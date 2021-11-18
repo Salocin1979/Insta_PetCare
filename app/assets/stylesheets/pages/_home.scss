@@ -174,7 +174,7 @@ main {
     display: flex;
     background-color: var(--main-light);
     min-width: 300px !important;
-    padding: 1.3rem 1rem;
+    padding: 1rem;
     align-items: center;
     margin-right: 1rem;
 }
@@ -182,10 +182,14 @@ main {
 .promo-img {
     height: 100px;
     width: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: .7rem;
+    margin-right: 2rem;
+
+    img {
+      object-fit: cover;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 20px;
+    }
 }
 
 .promo-item:last-child {
@@ -264,7 +268,7 @@ main {
 }
 
 .nav-item-main:hover {
-    
+
 }
 
 .nav-item-main div {
