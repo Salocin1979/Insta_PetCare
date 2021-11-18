@@ -18,15 +18,15 @@ user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gm
 
 puts "Creating species list"
 specie_dog = Specie.create!(name: "Dog")
-specie_cat = Specie.create!(name: "Cat")
-specie_chicken = Specie.create!(name: "Chicken")
+Specie.create!(name: "Cat")
+Specie.create!(name: "Chicken")
 
 puts "Creating the animal in the database..."
 
 Animal.create!( name: "Balto",
                 age: "2",
                 weight: "5",
-                specie: specie_dog,
+                specie: Specie.find_by(name: "Dog"),
                 user: user_one,
                 photo: "Balto")
 puts "Creating the symptoms in the database..."

@@ -30,6 +30,9 @@
           <div class="outfit-card-content">
             <h4 class="outfit-card-title">
               <%= animal.name %></h4>
+              <%if animal.photo.attached?%>
+              <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
                 <div class="outfit-card-details">
                   <p class="outfit-card-price"><%= animal %> / day</p>
                     <div class="outfit-card-actions">
