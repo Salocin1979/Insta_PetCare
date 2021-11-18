@@ -4,7 +4,6 @@ class PagesController < ApplicationController
 
   def home
     @animals = Animal.all
-    @consultation.animal = Animal.find(consultation_params[:animal_id])
-    @prescription.animal = Animal.find(prescription_params[:animal_id])
+    @prescriptions = Prescription.all
   end
 end
