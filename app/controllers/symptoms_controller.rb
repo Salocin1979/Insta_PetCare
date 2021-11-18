@@ -1,14 +1,16 @@
 class SymptomsController < ApplicationController
-<<<<<<< HEAD
-
   def index
       @symptoms = Symptom.all
     end
 
     def show
-      @symptoms =Symptom.find (params[id])
-
+      @symptoms =Symptom.find(symptom_params[:specie_id])
     end
-=======
->>>>>>> master
+
+    private
+
+    def symptom_params
+      params.require(:symptom).permit(:suggestion, :description, :specie_id)
+    end
+    
 end
