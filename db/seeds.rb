@@ -30,12 +30,6 @@ Animal.create!( name: "Balto",
                 user: user_one)
 #                photo: "Balto",
 puts "Creating the symptoms in the database..."
-<<<<<<< HEAD
-=======
-Symptom.create!(suggestion:"Biting",
-                description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
->>>>>>> master
-
 Symptom.create!(suggestion: "Biting",
                 description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
 Safety should be the primary concern. Avoid situations that may bring on an aggressive reaction. If your behaviorist recommends punishment/dominance-based training techniques, you may want to seek alternative help, as it may escalate aggression. There are better ways to deal with the problem.
