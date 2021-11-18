@@ -6,19 +6,22 @@ class PrescriptionsController < ApplicationController
     end
 
     def new
-       if is_veterinarian = true
-       @consultation =  Consultation.find(params[:consultation_id])
-       @prescription = Prescription.new
+       @user = current_user
+       if @user.is_veterinarian = true
+          @consultation =  Consultation.find(params[:consultation_id])
+         @prescription = Prescription.new
        #@consultations = Consultation.all
        end
     end
 
     def create
-        if is_veterinarian = true
+        @user = current_user
+        if @user.is_veterinarian = true
             @prescription = Prescription.new(prescription_params)
             @consultation = Consultation.find(params[:consultation_id])
             @prescription.consultation = @consultation
             if @prescription.save
+                flash[:alert] = "Prescription successfully created"
                 redirect_to consultation_prescriptions_path
             else
                 redirect_to new_consultation_prescription_path(@consultation)
@@ -44,15 +47,4 @@ class PrescriptionsController < ApplicationController
     def prescription_params
         params.require(:prescription).permit(:date, :content) 
     end
-
-
-
-
-
-
-
-
-
-
-
 end

@@ -28,7 +28,7 @@ Animal.create!( name: "Balto",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one)
-#                photo: "Balto",
+#               photo: "Balto",
 puts "Creating the symptoms in the database..."
 Symptom.create!(suggestion: "Biting",
                 description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
