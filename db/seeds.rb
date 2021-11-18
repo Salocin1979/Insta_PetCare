@@ -17,9 +17,9 @@ user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "
 user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
 
 puts "Creating species list"
-Specie.create! name: "Dog"
-Specie.create! name: "Cat"
-Specie.create! name: "Chicken"
+Specie.create!(name: "Dog")
+Specie.create!(name: "Cat")
+Specie.create!(name: "Chicken")
 
 puts "Creating the animal in the database..."
 
@@ -30,6 +30,11 @@ Animal.create!( name: "Balto",
                 user: user_one)
 #                photo: "Balto",
 puts "Creating the symptoms in the database..."
+<<<<<<< HEAD
+=======
+Symptom.create!(suggestion:"Biting",
+                description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
+>>>>>>> master
 
 Symptom.create!(suggestion: "Biting",
                 description: "You are probably not going to “cure” this aggressive dog, however, controlling the behavior is the goal. If the number of aggressive incidents can be decreased, you should feel that you have succeeded. A dog-training specialist can help you develop safety and management tools.
@@ -66,17 +71,17 @@ In the event that your cat is not able to breathe properly, a tube will be place
 
 Drugs will be given to bind the toxin and prevent its further binding to the nerve cells. Antibiotics will also also given, either orally or by injection, to control further spread of the infection. Topical (outer) antibiotics will also be used around the periphery of the wound to control infection.",
                 specie: Specie.find_by(name: "Cat"))
-Symptom.create! (suggestion:"Pectus Excavatum in Dogs",
+Symptom.create!(suggestion:"Pectus Excavatum in Dogs",
                 description: "Surgery remains the only treatment option for repairing this deformity. However, if the disease is mild and your dog only has a flat chest, then it may be improved without surgery. In such cases, your veterinarian will instruct you in manually compressing the chest in such a way that will encourage the sternum and costal cartilages to take on a more convex shape.
 
 In some dogs, a splint application will work to reduce the mild defects. However, in cases of moderate or severe inward sinking of the sternum, surgery is indicated for correction of the defects. The technique used by your veterinary surgeon will depend on your dog's age and the extent of the problem. Dogs with respiratory problems that are directly related to this condition, meanwhile, generally improve substantially after surgery and will start breathing more comfortably.",
                 specie: Specie.find_by(name: "Dog"))
- Symptom.create! (suggestion:"Urine Crystals in Dogs",
+ Symptom.create!(suggestion:"Urine Crystals in Dogs",
                 description: "Treatment will involve managing clinically important crystalluria by eliminating or controlling the underlying cause(s) or associated risk factors.
 
 Treatment will also work to minimize clinically important crystalluria by increasing urine volume, encouraging complete and frequent voiding, modifying the diet, and in some instances, by appropriate drug therapy.",
                 specie: Specie.find_by(name: "Dog"))
- Symptom.create! (suggestion:"Blind Quiet Eye in Dogs",
+ Symptom.create!(suggestion:"Blind Quiet Eye in Dogs",
                 description: "Your veterinarian will try to localize the disease and will often refer you to a veterinary ophthalmologist. Unfortunately, there is no effective treatment for Blind Quiet Eye brought on by SARDS, progressive retinal atrophy, optic nerve atrophy, or optic nerve hypoplasia. However, cataracts, luxated lenses, and some forms of retinal detachment may be treated surgically.
 
 In addition, dogs with retinal detachment should have their exercise severely restricted until the retina is firmly reattached. These patients should also be switched to a calorie-restricted diet to prevent obesity, which could occur due to reduced activity.",
