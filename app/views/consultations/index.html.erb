@@ -4,11 +4,11 @@
 <br />
 <br />
 <br />
-<table class="table table-bordered table-condensed table-stripe table-hover">
+<table class="table table-bordered table-condensed table-stripe">
   <tr>
       <th>Date visit</th>
       <th>Animal</th>
-      <th>Prescription</th>
+      <th>Create Prescription</th>
       <%# <th>Symptoms</th> %>
     <%# <th></th> %>
   </tr>
@@ -17,9 +17,8 @@
   <tr>
     <td><%= consultation.date %></td>
     <td><%= consultation.animal.name %></td>
-    
-    
-    <%# <td><%= link_to '', edit_consultation_path(consultation), class: 'icon-pencil' %></td>
+    <td><%= link_to new_consultation_prescription_path(consultation.id) do  %> <i class="fas fa-external-link-square-alt fa-1x"></i> <% end %></td>
+  
   </tr>
 <% end %>
 </table>
