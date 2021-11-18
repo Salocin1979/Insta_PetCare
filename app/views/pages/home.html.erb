@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
+
     <header>
         <nav>
             <div class="info">
@@ -17,7 +17,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <div class="categories section-wrapper">
             <div class="flex-header">
@@ -31,13 +31,13 @@
         <div class="popular section-wrapper">
           <div class="flex-header">
               <h2>My pet symptoms!</h2>
-                <%# <%= link_to symptom_path do %> 
+                <%# <%= link_to symptom_path do %>
                   <a href="">See all</a>
-                <%# <% end %> 
-              
+                <%# <% end %>
+
           </div>
         </div>
-        
+
         <div class="promo">
             <div class="items promo-items">
                 <div class="promo-item">
@@ -59,62 +59,16 @@
             </div>
         </div>
       </div>
-    
+
         <div class="popular section-wrapper">
             <div class="flex-header">
                 <h2>My prescriptions</h2>
                 <a href="">See all</a>
             </div>
         </div>
-<div>
-  <% if user_signed_in? %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/fe/d2/7f/fed27f20821ebbb0fd42c0aed0e2f81b.jpg);">
-      <div class="container">
-        <%= link_to "Add a new pet", new_animal_path, class: "btn btn-ghost" %>
-        <h1>Welcome, <%= current_user.email %> </h1> 
-        <p>How can we help you?</p>
-      </div>
-    </div>
-    <div class="list-cards ">
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> Talk to a vet now!</strong>
-        <%= link_to new_consultation_path do %>
-          <%= image_tag "https://cdn2.iconfinder.com/data/icons/thin-line-icons-for-seo-and-development-1/64/SEO_usability_audit_search_-50.png" %>
-        <% end %>
-        <%# <img class="image-card-homepage" src="https://cdn2.iconfinder.com/data/icons/thin-line-icons-for-seo-and-development-1/64/SEO_usability_audit_search_-50.png">  %>
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> My Consultations </strong>
-        <%= link_to consultations_path do %>
-          <%= image_tag "https://cdn4.iconfinder.com/data/icons/computer-and-web-2/500/Survey-50.png" %>
-        <% end %>
-        <%# <img class="image-card-homepage" src="https://cdn4.iconfinder.com/data/icons/computer-and-web-2/500/Survey-50.png">  %>
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> List of Pets </strong>
-        <%= link_to animals_path do %>
-          <%= image_tag "https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png" %>
-        <% end %>
-        <%# <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png">  %>
-      </div>
-      <div class= "card-homepage" style = "margin-bottom: 20px;">
-        <strong> Prescriptions </strong>
-        <%# <%= link_to posts_path do %>
-          <%# <%= image_tag "image" %>
-        <% end %>
-        <img class="image-card-homepage" src="https://cdn0.iconfinder.com/data/icons/medical-equipment-in-line-form/64/medical_prescription-50.png"> 
-      </div>
-    </div>
-    </div>
-</div>
-
-
-
-
-
 </div>
 
 </main>
-    
+
 
 </body></html>
