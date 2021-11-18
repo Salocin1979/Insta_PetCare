@@ -27,15 +27,10 @@ animal_one = Animal.create!(name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
-<<<<<<< HEAD
-                user: user_one,
-                photo: "Balto")
-=======
                 user: user_one)
 animal_one.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 
->>>>>>> 60aa4c1ce7520c5c162ae90150a08e0e789bb155
 puts "Creating the symptoms in the database..."
 
 Symptom.create!(suggestion: "Biting",
