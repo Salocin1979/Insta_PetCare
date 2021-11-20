@@ -13,7 +13,7 @@ class ConsultationsController < ApplicationController
     @consultation.user = current_user
     @consultation.animal = Animal.find(consultation_params[:animal_id])
     if @consultation.save
-      redirect_to consultations_path
+      redirect_to consultation_path(@consultation)
     else
       render :new
     end
@@ -21,7 +21,7 @@ class ConsultationsController < ApplicationController
 
 
   def show
-    @consultation = Consultation.find(consultation_params[:animal_id])
+    @consultation = Consultation.find(params[:id])
     @token = generate_token(@consultation)
   end
   
