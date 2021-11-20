@@ -1,40 +1,35 @@
-    <div class="bottom-nav">
-        <div class="bottom-inner">
-            <div class="bottom-main">
-                <div class="nav-items">
-                    <div class="nav-item">
-                        <span class="las la-home"></span>
-                        <%# <p>Home</p> %>
-                        <%# <% if user_signed_in? %>
-                            <%# <li class="nav-item active"> %>
-                            <%= link_to "Home", "/", class: "nav-link" %>
-                            <%# </li> %>
-                    </div>
-                    <div class="nav-item">
-                        <img src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png"> 
-                        <%# <p>Pets</p> %>
-                        <%= link_to "Your pets", animals_path, class: "nav-link" %>
-                    </div>
-                </div>
-                <div class="nav-item-main">
-                    <div>
-                        <%= link_to new_consultation_path do %>
-                        <span class="fal fa-phone fa-3x"></span> 
-                        <%# <i class="fal fa-phone fa-3x"></i> %>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="nav-items">
-                    <div class="nav-item">
-                        <span class="las la-gift"></span>
-                        <p></p>
-                    </div>
-                    <div class="nav-item">
-                        <span class="las la-ellipsis-h"></span>
-                        <p>More</p>
-                      
-                    </div>
-                </div>
-            </div>
+
+<div class="bottom-nav">
+  <div class="bottom-inner">
+    <div class="bottom-main">
+
+      <% if user_signed_in? %>
+      <div class="nav-items">
+
+        <div class="nav-item">
+          <%= image_tag("icon-home.png", :alt => "home icone") %>
+          <%= link_to "Porfile", root_path, class: "nav-link" %>
         </div>
+
+        <div class="nav-item">
+          <img src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png">
+          <%# <p>Pets</p> %>
+          <%= link_to "Your pets", animals_path, class: "nav-link" %>
+        </div>
+
+      </div>
+
+      <div class="nav-item-main">
+        <div>
+          <%= link_to new_consultation_path do %>
+            <span class="fal fa-phone fa-3x"></span>
+            <%# <i class="fal fa-phone fa-3x"></i> %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
     </div>
+  </div>
+</div>
+
