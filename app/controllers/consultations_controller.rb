@@ -1,6 +1,7 @@
 class ConsultationsController < ApplicationController
   def index
-    @consultations = Consultation.all
+    @consultations = Consultation.all 
+    @user = current_user
   end
 
   def new
@@ -9,15 +10,15 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    @consultation = Consultation.new(consultation_params)
-    @consultation.user = current_user
-    @consultation.animal = Animal.find(consultation_params[:animal_id])
-    if @consultation.save
-      redirect_to consultations_path
-    else
-      render :new
-    end
-  end
+      @consultation = Consultation.new(consultation_params)
+      @consultation.user = current_user
+      @consultation.animal = Animal.find(consultation_params[:animal_id])
+      if @consultation.save
+        redirect_to consultations_path
+      else
+        render :new
+      end
+   end
 
 
   def show
