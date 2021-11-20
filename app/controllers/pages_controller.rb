@@ -4,12 +4,12 @@ class PagesController < ApplicationController
 
   def home
     @animals = Animal.all
-    @prescriptions = Prescription.all
-
-    def read?
-      if @prescription.read = false
-        flash.now[:notice] = "prescription for #{@animals.name} is available."
+   if user_signed_in?
+    consultation_ids = Consultation.where(animal_id: current_user.animals.ids).ids
+    prescriptions = Prescription.where(consultation_id: consultation_ids)
+        prescriptions.each do |prescription|
+       flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
+       prescription.update(read: true)
       end
-    end
-  end
+   end
 end
