@@ -43,18 +43,26 @@
                 <div class="promo-item">
                     <div class="promo-img" style="background-image: url(img/apples.png)"></div>
                     <div class="promo-info">
-                        <h3>Balto</h3>
-                        <p>2 years old</p>
+                        <%# <h3>Balto</h3>
+                        <p>2 years old</p> %>
+                        <% if user_signed_in? %>
+                            <% @animals.each do |animal| %>
+                                <%= animal.name %>
+                                <%if animal.photo.attached?%>
+                                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                                <% end %>
+                            <% end %>
+                        <% end %>
                         <a href="">View</a>
                     </div>
                 </div>
                 <div class="promo-item">
                     <div class="promo-img" style="background-image: url(img/banana.png)"></div>
-                    <div class="promo-info">
+                        <div class="promo-info">
                         <h3>Will</h3>
                         <p>3 years old</p>
                         <a href="">View</a>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
