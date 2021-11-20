@@ -1,74 +1,58 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1">
-    <title>Mobile UI</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+<div>
+  <% if user_signed_in? %>
     <header>
-        <nav>
-            <div class="info">
-                <% if user_signed_in? %>
-                <p>Hello <%= current_user.first_name %></p>
-                <p>How can we help you today</p>
-                <% end %>
-            </div>
-        </nav>
+      <nav>
+        <div class="info">
+          <p>Hello <%= current_user.first_name %></p>
+          <p>How can we help you today</p>
+        </div>
+      </nav>
     </header>
-
     <main>
-        <div class="categories section-wrapper">
-            <div class="flex-header">
-                <h2>Talk to a vet now!</h2>
-                  <%= link_to new_consultation_path do %>
-                    <a href="category.html">Start a Call</a>
-                  <% end %>
-            </div>
-        </div>
-        <p></p>
-        <div class="popular section-wrapper">
-          <div class="flex-header">
-              <h2>My pet symptoms!</h2>
-                <%# <%= link_to symptom_path do %>
-                  <a href="">See all</a>
-                <%# <% end %>
-
-          </div>
-        </div>
-
-        <div class="promo">
-            <div class="items promo-items">
-                <div class="promo-item">
-                    <div class="promo-img" style="background-image: url(img/apples.png)"></div>
-                    <div class="promo-info">
-                        <h3>Balto</h3>
-                        <p>2 years old</p>
-                        <a href="">View</a>
-                    </div>
-                </div>
-                <div class="promo-item">
-                    <div class="promo-img" style="background-image: url(img/banana.png)"></div>
-                    <div class="promo-info">
-                        <h3>Will</h3>
-                        <p>3 years old</p>
-                        <a href="">View</a>
-                    </div>
-                </div>
-            </div>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <h2>Talk to a vet now!</h2>
+          <a><%= link_to 'Start call', new_consultation_path %></a>
         </div>
       </div>
-
-        <div class="popular section-wrapper">
-            <div class="flex-header">
-                <h2>My prescriptions</h2>
-                <a href="">See all</a>
-            </div>
+      <p></p>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>My pet symptoms!</h2>
+          <a><%= link_to 'See all', animals_path %>
         </div>
+      </div>
+      <div class="promo">
+        <div class="items promo-items">
+          <% @animals.each do |animal| %>
+            <div class="promo-item">
+              <div class="promo-img">
+                <%if animal.photo.attached?%>
+                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+              </div>
+              <div class="promo-info">
+                <h3><%= animal.name %></h3>
+                <p><%= animal.age %></p>
+                <a><%= link_to 'More info', animal_path(animal) %></a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>My prescriptions</h2>
+          <a href="">See all</a>
+        </div>
+      </div>
+    <% else %>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <h2>Please log in</h2>
+          <a><%= link_to 'Start call', new_user_session_pathh %></a>
+        </div>
+      </div>
+    </main>
+  <% end %>
 </div>
-
-</main>
-
-
-</body></html>

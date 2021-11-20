@@ -38,6 +38,13 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# Twilio
+# gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 5.61.1'
+
+
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
@@ -66,6 +73,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'

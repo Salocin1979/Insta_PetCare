@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
+
   def home
     @animals = Animal.all
    if user_signed_in?
@@ -11,5 +12,4 @@ class PagesController < ApplicationController
        prescription.update(read: true)
       end
    end
-  end
 end
