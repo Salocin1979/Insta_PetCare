@@ -34,7 +34,7 @@
               <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
                 <div class="outfit-card-details">
-                  <p class="outfit-card-price"><%= animal %> / day</p>
+                  <p class="outfit-card-price"><%= animal.age %> years old</p>
                     <div class="outfit-card-actions">
                       <% if user_signed_in? %>
                         <li class="nav-item active">
