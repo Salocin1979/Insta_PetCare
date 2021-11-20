@@ -1,62 +1,58 @@
-<body>
+<div>
+  <% if user_signed_in? %>
     <header>
-        <nav>
-            <div class="info">
-                <% if user_signed_in? %>
-                <p>Hello <%= current_user.first_name %></p>
-                <p>How can we help you today</p>
-                <% end %>
-            </div>
-        </nav>
+      <nav>
+        <div class="info">
+          <p>Hello <%= current_user.first_name %></p>
+          <p>How can we help you today</p>
+        </div>
+      </nav>
     </header>
-
     <main>
-        <div class="categories section-wrapper">
-            <div class="flex-header">
-                <h2>Talk to a vet now!</h2>
-                  <a><%= link_to 'Start call', new_consultation_path %></a>
-            </div>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <h2>Talk to a vet now!</h2>
+          <a><%= link_to 'Start call', new_consultation_path %></a>
         </div>
-        <p></p>
-        <div class="popular section-wrapper">
-          <div class="flex-header">
-              <h2>My pet symptoms!</h2>
-                <%# <a><%= link_to 'See all', symptom_path %>
-          </div>
+      </div>
+      <p></p>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>My pet symptoms!</h2>
+          <a><%= link_to 'See all', animals_path %>
         </div>
-
-
+      </div>
       <div class="promo">
-        <% if user_signed_in? %>
+        <div class="items promo-items">
           <% @animals.each do |animal| %>
-            <div class="items promo-items">
-                <div class="promo-item">
-                    <div class="promo-img">
-                      <%if animal.photo.attached?%>
-                        <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-                      <% end %>
-                    </div>
-                    <div class="promo-info">
-                      <h3><%= animal.name %></h3>
-                      <p><%= animal.age %></p>
-                      <a><%= link_to 'More info', animal_path(animal) %></a>
-                    </div>
-                </div>
+            <div class="promo-item">
+              <div class="promo-img">
+                <%if animal.photo.attached?%>
+                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+              </div>
+              <div class="promo-info">
+                <h3><%= animal.name %></h3>
+                <p><%= animal.age %></p>
+                <a><%= link_to 'More info', animal_path(animal) %></a>
+              </div>
             </div>
-            <% end %>
           <% end %>
         </div>
-
-
-        <div class="popular section-wrapper">
-            <div class="flex-header">
-                <h2>My prescriptions</h2>
-                <a href="">See all</a>
-            </div>
+      </div>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>My prescriptions</h2>
+          <a href="">See all</a>
         </div>
+      </div>
+    <% else %>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <h2>Please log in</h2>
+          <a><%= link_to 'Start call', new_user_session_pathh %></a>
+        </div>
+      </div>
+    </main>
+  <% end %>
 </div>
-
-</main>
-
-
-</body></html>
