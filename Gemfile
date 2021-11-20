@@ -38,6 +38,13 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# Twilio
+# gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 5.61.1'
+
+
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

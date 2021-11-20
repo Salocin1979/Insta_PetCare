@@ -23,12 +23,13 @@ Specie.create!(name: "Chicken")
 
 puts "Creating the animal in the database..."
 
-Animal.create!( name: "Balto",
+Animal.create!(name: "Balto",
                 age: "2",
                 weight: "5",
                 specie: Specie.find_by(name: "Dog"),
-                user: user_one)
-#               photo: "Balto",
+                user: user_one,
+                photo: "Balto")
+
 puts "Creating the symptoms in the database..."
 
 Symptom.create!(suggestion: "Biting",
