@@ -22,7 +22,7 @@ class ConsultationsController < ApplicationController
 
   def show
     @consultation = Consultation.find(consultation_params[:animal_id])
-    # @token = generate_token(@consultation)
+    @token = generate_token(@consultation)
   end
   
     
@@ -34,17 +34,17 @@ class ConsultationsController < ApplicationController
 
   end
 
-  # def generate_token(consultation)
-  #   # Create an Access Token
-  #   token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
-  #       ttl: 14400,
-  #       identity: current_user.email
-  #   # Grant access to Video
-  #   grant = Twilio::JWT::AccessToken::VideoGrant.new
-  #   grant.room = consultation.url_room
-  #   token.add_grant grant
-  #   # Serialize the token as a JWT
-  #   token.to_jwt
-  # end
+  def generate_token(consultation)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = consultation.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
+  end
 
 end

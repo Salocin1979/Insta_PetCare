@@ -1,3 +1,5 @@
+# require 'twilio-ruby'
+
 class Consultation < ApplicationRecord
   belongs_to :user
   belongs_to :animal
