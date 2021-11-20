@@ -17,7 +17,7 @@ user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "
 user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
 
 puts "Creating species list"
-Specie.create!(name: "Dog")
+specie_dog = Specie.create!(name: "Dog")
 Specie.create!(name: "Cat")
 Specie.create!(name: "Chicken")
 
