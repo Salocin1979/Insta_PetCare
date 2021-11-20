@@ -1,16 +1,71 @@
 <div class= "container-fluid">
-  <div class="row title_prescriptions pt-5 pb-5">
-    <h1>Prescription </h1>
-  </div>
+  <div class= "container_page">
+    <div class = "logo_container">
+      <img class="row title_logo" src="https://vetfini.com/wp-content/uploads/liberty-vet-clinic.png?width=150px" alt="">
+    </div>
+    <div class="row title_presc">
+      <h5>Prescription No. <%= @prescription.id %></h5>
+      <h5>Dr. <%= @prescription.consultation.user.last_name%></h5>  <%# from consultation.user we get the vet  # out of animal id we get user %>
+    </div>
 
-  <div class= "container-fluid">
-    <div class="card-product">
-      <div class="card-product-infos">
-        <h5><strong><%= @prescription.date %></strong></h5> 
-        <p><%= @prescription.content %></p>
-      </div>
-      <div class="col-sm">
-        <button class="btn-primary"><%= 'Print to pdf' %></button>
+    <div>
+      <table class="table">
+        <tbody  class="tb_table">
+          <tr>
+            <td>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Date:</li>
+                <li style="display:inline"><%= @prescription.date %></li>
+              </ul>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Consultation Date:</li>
+                <li style="display:inline"><%= @prescription.consultation.date %></li>
+              </ul>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Pet Owner:</li>
+                <li style="display:inline"><%= @prescription.consultation.animal.user.first_name %></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <table class="table_content">
+        <tbody  style= "height: 120px;">
+          <%= @prescription.content %>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <table class="table">
+        <tbody  class="tb_table">
+          <tr>
+            <td>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Pet Name:</li>
+                <li style="display:inline"><%= @prescription.consultation.animal.name %> </li>
+              </ul>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Specie:</li>
+                <li style="display:inline"><%= @prescription.consultation.animal.specie.name %></li>
+              </ul>
+              <ul class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline">Animal Age:</li>
+                <li style="display:inline"><%= @prescription.consultation.animal.age %> years</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="end_page">
+      <div class="links">
+        <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
       </div>
     </div>
   </div>

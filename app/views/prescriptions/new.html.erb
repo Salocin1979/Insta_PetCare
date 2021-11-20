@@ -1,12 +1,12 @@
-<div class="container py-5">
+<div class="container_create py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create your prescription</h3>
+      <div class="bg-white rounded  shadow">
+        <h4>Create your prescription</h4>
         <%= simple_form_for [@consultation, @prescription] do |f| %>
           <%= f.input :date %>
           <%= f.input :content %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>

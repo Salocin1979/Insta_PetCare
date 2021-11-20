@@ -1,6 +1,7 @@
 class ConsultationsController < ApplicationController
   def index
-    @consultations = Consultation.all
+    @consultations = Consultation.all 
+    @user = current_user
   end
 
   def new
@@ -19,13 +20,11 @@ class ConsultationsController < ApplicationController
     end
   end
 
-
   def show
     @consultation = Consultation.find(params[:id])
     @token = generate_token(@consultation)
   end
   
-    
 
   private
   

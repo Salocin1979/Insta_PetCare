@@ -1,24 +1,19 @@
 <div class="banner_outfits container-fluid p-5">
   <h1>All your animals!</h1>
-    <div class="row pt-5 pb-2"></div>
-      <% if user_signed_in? %>
-      <div class="col-sm">
-        <button class="btn-primary"><%= link_to 'Add a new animal', new_animal_path %></button>
-      </div>
-        <% else %>
-          <button class="btn-primary"><%= link_to "", new_user_session_path, class: "nav-link" %>
-          </button>
-        <% end %>
-          <div class="row pt-2 pb-5"></div>
-            <div class="col">
-              <p>All <%= Animal.count %> animals.</p>
-              <%= cl_image_tag("Balto",
-                width: 400, height: 300, crop: :fill) %>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="row pt-5 pb-2"></div>
+  <% if user_signed_in? %>
+    <div class="col-sm">
+      <button class="btn-primary"><%= link_to 'Add a new animal', new_animal_path %></button>
     </div>
+  <% else %>
+    <button class="btn-primary"><%= link_to "", new_user_session_path, class: "nav-link" %>
+    </button>
+  <% end %>
+  <div class="row pt-2 pb-5"></div>
+  <div class="col">
+    <p>All <%= Animal.count %> animals.</p>
+    <%= cl_image_tag("Balto",
+                width: 400, height: 300, crop: :fill) %>
   </div>
 </div>
 
@@ -30,26 +25,26 @@
           <div class="outfit-card-content">
             <h4 class="outfit-card-title">
               <%= animal.name %></h4>
-              <%if animal.photo.attached?%>
+            <%if animal.photo.attached?%>
               <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-              <% end %>
-                <div class="outfit-card-details">
-                  <p class="outfit-card-price"><%= animal %> / day</p>
-                    <div class="outfit-card-actions">
-                      <% if user_signed_in? %>
-                        <li class="nav-item active">
-                          <%= link_to 'More info', animal_path(animal) %>
-                        </li>
-                      <% else %>
-                          <%= link_to "More info", new_user_session_path, class: "nav-link" %>
-                      <% end %>
-                    </div>
-                </div>
+            <% end %>
+            <div class="outfit-card-details">
+              <p class="outfit-card-price"><%= animal.age %> years old</p>
+              <div class="outfit-card-actions">
+                <% if user_signed_in? %>
+                  <li class="nav-item active">
+                    <%= link_to 'More info', animal_path(animal) %>
+                  </li>
+                <% else %>
+                  <%= link_to "More info", new_user_session_path, class: "nav-link" %>
+                <% end %>
               </div>
+            </div>
           </div>
-       <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+
 <div class="pt-5 pb-5"></div>
