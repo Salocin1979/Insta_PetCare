@@ -7,7 +7,7 @@ class PrescriptionsController < ApplicationController
 
     def new
        @user = current_user
-       if @user.is_veterinarian = true
+       if is_veterinarian = true
           @consultation =  Consultation.find(params[:consultation_id])
          @prescription = Prescription.new
        #@consultations = Consultation.all
@@ -16,7 +16,7 @@ class PrescriptionsController < ApplicationController
 
     def create
         @user = current_user
-        if @user.is_veterinarian = true
+        if is_veterinarian = true
             @prescription = Prescription.new(prescription_params)
             @consultation = Consultation.find(params[:consultation_id])
             @prescription.consultation = @consultation
