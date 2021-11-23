@@ -12,4 +12,5 @@ class PagesController < ApplicationController
        prescription.update(read: true)
       end
    end
+  end
 end
