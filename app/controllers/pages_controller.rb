@@ -11,5 +11,6 @@ class PagesController < ApplicationController
        flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
        prescription.update(read: true)
       end
+    end
    end
 end
