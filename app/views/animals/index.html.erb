@@ -8,10 +8,12 @@
     </header>
     <main>
         <% @animals.each do |animal| %>
-            <h3><%= @animals.name %></h3>
+            <h3><%= animal.name %></h3>
             <div class="show-img">
-              <%if animal.photo.attached?%>
-                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= link_to symptoms_path(specie_id: animal.specie) do  %> 
+                <%if animal.photo.attached?%>
+                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
               <% end %>
             </div>
         <% end %>
