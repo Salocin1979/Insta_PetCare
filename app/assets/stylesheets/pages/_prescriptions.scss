@@ -37,7 +37,7 @@ background-color: white;
 }
 
 
-.title_logo {
+.title-logo {
     display: flex;
     width: 100px;
 }
@@ -51,6 +51,11 @@ background-color: white;
     display: flex;
     flex-direction: column;
 }
+
+
+.table_content {
+    height: 150px;
+ }
 
 .end_page {
     text-align: center;

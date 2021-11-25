@@ -1,7 +1,7 @@
 <div class= "container-fluid">
   <div class= "container_page">
     <div class = "logo_container">
-      <img class="row title_logo" src="https://vetfini.com/wp-content/uploads/liberty-vet-clinic.png?width=150px" alt="">
+      <img class="row title-logo" src="https://vetfini.com/wp-content/uploads/liberty-vet-clinic.png?width=150px" alt="">
     </div>
     <div class="row title_presc">
       <h5>Prescription No. <%= @prescription.id %></h5>
@@ -9,7 +9,7 @@
     </div>
 
     <div>
-      <table class="table">
+      <table class="table_info">
         <tbody  class="tb_table">
           <tr>
             <td>
@@ -33,7 +33,7 @@
     
     <div>
       <table class="table_content">
-        <tbody  style= "height: 120px;">
+        <tbody  >
           <%= @prescription.content %>
         </tbody>
       </table>
@@ -61,15 +61,6 @@
         </tbody>
       </table>
     </div>
-
-    <div class="end_page">
-      <div class="links">
-        <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <%= link_to  "Back", consultations_path, class: 'btn btn-primary'%>
+    <%= link_to  "Back", consultation_prescriptions_path, class: 'btn btn-primary mt-3'%>
   </div>
 </div>

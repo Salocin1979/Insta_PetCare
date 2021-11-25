@@ -33,8 +33,8 @@ class PrescriptionsController < ApplicationController
       respond_to do |format|
         format.html
           format.pdf do
-          render pdf: "file_name", template: "prescriptions/show.html.erb"  # Excluding ".pdf" extension.
-        end
+          render pdf: "file_name", template: "prescriptions/show.html.erb", layout: "pdf"  # Excluding ".pdf" extension.
+          end
       end
     end
 

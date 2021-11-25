@@ -1,0 +1,55 @@
+
+.container_page {
+    background-color: white;
+    justify-content: center;
+    border: 2px solid black;
+    }
+    
+    .container_create {
+        width: 100%;
+        margin: auto;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    
+    .bg-white {
+       width: 100%;
+    }
+    
+    
+    .title_presc {
+    
+        background-color: #eaeaea;
+        align-content: space-around;
+        border-bottom: 1px solid black;
+
+    }
+    
+    .logo_container {
+        background-color: #eaeaea;
+        border-bottom: 1px solid black;
+    }
+    
+    
+    .title-logo {
+         width: 100px;
+        justify-content: space-around;
+    }
+    
+    .table_info {
+       background-color: #efefef;
+       border-bottom: 1px solid black;
+       width: 100%;
+    }
+
+    .table_content {
+    border-bottom: 1px solid red;
+    width: 100%;
+    }
+    
+    .tb_table{
+        display: flex;
+        flex-direction: column;
+    }
+    
