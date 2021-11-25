@@ -12,18 +12,15 @@
           <th>PDF</th>
           <th>Show</th>
         </tr>
-      <% @prescriptions.each do |prescription| %>
-        <tr>
-          <td><i class="icon-calendar"></i><%= prescription.id %></td>
-                  
-          <td><i class="icon-calendar"></i><%= prescription.date %></td>
-         
-          <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
-          <td> <%= link_to 'PDF', consultation_prescription_path(prescription.consultation, prescription, format: :pdf) %></td>   
-          <td> <%= link_to 'Show', consultation_prescription_path(prescription.consultation, prescription) %></td>   
-
-        </tr>
-      <% end %>
+        <% @prescriptions.each do |prescription| %>
+          <tr>
+            <td><i class="icon-calendar"></i><%= prescription.id %></td>     
+            <td><i class="icon-calendar"></i><%= prescription.date %></td>
+            <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
+            <td> <%= link_to 'PDF', consultation_prescription_path(prescription.consultation, prescription, format: :pdf) %></td>   
+            <td> <%= link_to 'Show', consultation_prescription_path(prescription.consultation, prescription) %></td>   
+          </tr>
+        <% end %>
       </table>
       <br />
   </div>

@@ -6,7 +6,7 @@
         <p>How can we help you <br>
            today ?</p>
       </div>
-      <%= image_tag("profile-img.jpeg", :alt => "profile image") %>
+      <%= cl_image_tag "profile-img", :alt => "profile image" %>
     </header>
     <main>
       <div class="categories section-wrapper">
@@ -37,7 +37,7 @@
               </div>
               <div class="promo-info">
                 <h3><%= animal.name %></h3>
-                <p><%= animal.age %></p>
+                <p><%= animal.age %> years old</p>
                 <a><%= link_to 'More info', animal_path(animal) %></a>
               </div>
             </div>
@@ -55,8 +55,7 @@
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
-          <h2>Please log in</h2>
-          <%# <a><%= link_to 'Start call', new_user_session_pathh %></a> %>
+          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
         </div>
       </div>
     </main>
