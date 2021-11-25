@@ -10,7 +10,7 @@ class PagesController < ApplicationController
         prescriptions.each do |prescription|
         flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
         prescription.update(read: true)
-        end
+      end
     end
   end
 end
