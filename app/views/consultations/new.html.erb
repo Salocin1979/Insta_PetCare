@@ -2,7 +2,7 @@
 
 <%= simple_form_for [@animal, @user, @consultation] do |f| %>
   <%= f.association :animal, selected: @animal %>
-  <%= f.association :user, label_method: :first_name %>
+  <%= f.association :user, label: "Choose your vet", label_method: :first_name %>
    <%= f.input :date, label: "Sélectionnez vos dates:",
                                as: :string,
                                required: false,
