@@ -38,6 +38,11 @@ class AnimalsController < ApplicationController
       redirect_to animals_path
     end
 
+    #def symptoms
+    #   @symptoms = Symptom.where(specie: animal.specie)
+    #   raise
+    # end
+
     private
 
     def set_animal
