@@ -6,7 +6,7 @@
         <div class="nav-items">
           <div class="nav-item">
           <%= link_to root_path do %>
-            <%= cl_image_tag "icon-home", :alt => "home icone" %>
+            <%= image_tag "icon-home", :alt => "home icone" %>
             <span>My Profile</span>
             <% end %>
           </div>
@@ -15,14 +15,14 @@
         <div class="nav-item-main">
           <div>
             <%= link_to new_consultation_path do %>
-              <%= cl_image_tag "icon-call", :alt => "call icone" %>
+              <%= image_tag "icon-call", :alt => "call icone" %>
             <% end %>
           </div>
         </div>
 
         <div class="nav-item">
            <%= link_to new_consultation_path do %>
-            <%= cl_image_tag "icon-meds", :alt => "call icone" %>
+            <%= image_tag "icon-meds", :alt => "call icone" %>
             <span>Prescriptions</span>
           <% end %>
         </div>
