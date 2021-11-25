@@ -1,3 +1,22 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bottom-main {
+    background: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 30px;
+    border-radius: 30% 30% 0px 0px;
+    width: 100%;
+}
+
+.bottom-inner {
+    position: relative;
+}
 
 .nav-item-main {
     background: #f1f1f1;
@@ -18,7 +37,7 @@
 }
 
 .nav-item-main div {
-    border: 7px solid var(--main-color);
+    border: 7px solid var(--green-call);
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -32,12 +51,14 @@
 }
 
 .nav-items {
-    display: flex;
+   width: 30%;
 }
 
-.nav-item {
+.nav-item, .nav-item-main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-right: 2.3rem;
     text-align: center;
 
@@ -45,23 +66,19 @@
       width: 30px;
       height: auto;
     }
+
+    span {
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
 }
 
 .nav-item:last-child {
     margin-right: 0rem;
 }
 
-.nav-item span {
-    display: block;
-    color: #fff;
-    font-size: 1.6rem;
-    margin-bottom: .3rem;
-    transition: font-size 100ms;
-}
-
-.nav-item:hover span {
-    font-size: 1.7rem;
-}
 
 .nav-item p {
     font-size: .9rem;
@@ -76,3 +93,5 @@ nav .img {
     background-repeat: no-repeat;
     border-radius: 50%;
 }
+
+

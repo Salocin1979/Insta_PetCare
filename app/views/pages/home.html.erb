@@ -1,25 +1,29 @@
 <div>
   <% if user_signed_in? %>
-    <header>
-      <nav>
-        <div class="info">
-          <p>Hello <%= current_user.first_name %></p>
-          <p>How can we help you today</p>
-        </div>
-      </nav>
+    <header class="user-header">
+      <div class="info">
+        <h1>Hello Emily,</h1>
+        <p>How can we help you <br>
+           today ?</p>
+      </div>
+      <%= cl_image_tag "profile-img", :alt => "profile image" %>
     </header>
     <main>
       <div class="categories section-wrapper">
         <div class="flex-header">
           <h2>Talk to a vet now!</h2>
-          <a><%= link_to 'Start call', new_consultation_path %></a>
+          <%= link_to new_consultation_path do %>
+            <button class="cta">Start call</button>
+          <%end%>
         </div>
       </div>
       <p></p>
       <div class="popular section-wrapper">
         <div class="flex-header">
           <h2>My pet symptoms!</h2>
-          <a><%= link_to 'See all', animals_path %>
+          <%= link_to animals_path do %>
+            <button class="cta">See all</button>
+          <%end%>
         </div>
       </div>
       <div class="promo">
@@ -33,7 +37,7 @@
               </div>
               <div class="promo-info">
                 <h3><%= animal.name %></h3>
-                <p><%= animal.age %></p>
+                <p><%= animal.age %> years old</p>
                 <a><%= link_to 'More info', animal_path(animal) %></a>
               </div>
             </div>
@@ -43,14 +47,15 @@
       <div class="popular section-wrapper">
         <div class="flex-header">
           <h2>My prescriptions</h2>
-          <a href="">See all</a>
+          <%= link_to root_path do %>
+            <button class="cta">See all</button>
+          <%end%>
         </div>
       </div>
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
-          <h2>Please log in</h2>
-          <%# <a><%= link_to 'Start call', new_user_session_pathh %></a> %>
+          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
         </div>
       </div>
     </main>

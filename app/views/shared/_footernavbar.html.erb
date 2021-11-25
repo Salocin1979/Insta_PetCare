@@ -1,35 +1,33 @@
-
 <div class="bottom-nav">
   <div class="bottom-inner">
     <div class="bottom-main">
 
       <% if user_signed_in? %>
-      <div class="nav-items">
+        <div class="nav-items">
+          <div class="nav-item">
+          <%= link_to root_path do %>
+            <%= cl_image_tag "icon-home", :alt => "home icone" %>
+            <span>My Profile</span>
+            <% end %>
+          </div>
+        </div>
 
-        <div class="nav-item">
-          <%= image_tag("icon-home.png", :alt => "home icone") %>
-          <%= link_to "Porfile", root_path, class: "nav-link" %>
+        <div class="nav-item-main">
+          <div>
+            <%= link_to new_consultation_path do %>
+              <%= cl_image_tag "icon-call", :alt => "call icone" %>
+            <% end %>
+          </div>
         </div>
 
         <div class="nav-item">
-          <img src="https://cdn0.iconfinder.com/data/icons/camping-hiking-thin-outline/33/paw-50.png">
-          <%# <p>Pets</p> %>
-          <%= link_to "Your pets", animals_path, class: "nav-link" %>
-        </div>
-
-      </div>
-
-      <div class="nav-item-main">
-        <div>
-          <%= link_to new_consultation_path do %>
-            <span class="fal fa-phone fa-3x"></span>
-            <%# <i class="fal fa-phone fa-3x"></i> %>
+           <%= link_to new_consultation_path do %>
+            <%= cl_image_tag "icon-meds", :alt => "call icone" %>
+            <span>Prescriptions</span>
           <% end %>
         </div>
-      </div>
-    <% end %>
 
+      <% end %>
     </div>
   </div>
 </div>
-
