@@ -8,9 +8,9 @@ class PagesController < ApplicationController
       consultation_ids = Consultation.where(animal_id: current_user.animals.ids).ids
       prescriptions = Prescription.where(consultation_id: consultation_ids)
         prescriptions.each do |prescription|
-          flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
-          prescription.update(read: true)
-        end
+        flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
+        prescription.update(read: true)
+      end
     end
   end
 end

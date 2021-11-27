@@ -1,0 +1,55 @@
+.user-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+  .participant {
+  border-radius: 16px;
+  overflow: hidden;
+  video {
+    border-radius: 16px;
+    width: 100%;
+  }
+}
+
+.remote-media-div {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #userVideo {
+    width: auto;
+    position:relative;
+    height: 400px;
+    top: 60px;
+    right: 96x;
+    object-fit: cover;
+    background-color: gray;
+  }
+
+  #leave-btn {
+    position: relative;
+        top: 300px;
+        right: 300px;
+  }
+
+}
+
+.consultation {
+  top: 0 !important;
+  padding: 0;
+}
+
+
+// #userVideo {
+//   width: 200px;
+//   position: relative;
+//   top: 9px;
+//   right: 110px;
+// }

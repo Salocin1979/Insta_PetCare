@@ -1,17 +1,14 @@
-<% if is_veterinarian = true %>
-<div class="title-wrapper">
-  <div class="container">
-    <h1 class="title">Your Vet online</h1>
-  </div>
-</div>
 
-<div class="container">
-  <div 
-    class="twilio-video" 
-    data-sid="<%= ENV["ACCOUNT_SID"] %>" 
-    data-room="<%= @consultation.url_room %>" 
-    data-token="<%= @token %>"
-    >
+  <% if user_signed_in? %>
+
+
+    <main class="consultation">
+
+
+    <div class="twilio-video"
+    data-sid="<%= ENV["ACCOUNT_SID"] %>"
+    data-room="<%= @consultation.url_room %>"
+    data-token="<%= @token %>">
 
     <div class="row justify-content-between">
       <div class="col-7">
@@ -21,25 +18,30 @@
       <div class="col-4">
         <div class="remote-media-div text-center">
           <video id="userVideo" autoplay muted="true" ></video>
-          <div>
-            <button id='leave-btn' class='btn btn-primary mt-3'> 
+
+
+            <button id='leave-btn'>
               Leave
             </button>
-          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-7">
-      <p class="text-center">
-        <%# <%= @consultation.user == current_user ? @animal.user.email : @booking.user.email %>
-      </p>
       </div>
     </div>
-    <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
 
-  </div>
-</div>
+
+
+        
+
+
 <% else %>
-<%= "You do not have access to same" %>
+  <div class="categories section-wrapper">
+    <div class="flex-header">
+      <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
+    </div>
+  </div>
+</main>
 <% end %>
+
+
+<%# <%= @consultation.user == current_user ? @animal.user.email : @booking.user.email %>
+

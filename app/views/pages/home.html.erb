@@ -2,11 +2,11 @@
   <% if user_signed_in? %>
     <header class="user-header">
       <div class="info">
-        <h1>Hello Emily,</h1>
+        <h1>Hello <%= current_user.first_name %>,</h1>
         <p>How can we help you <br>
            today ?</p>
       </div>
-      <%= cl_image_tag "profile-img", :alt => "profile image" %>
+      <%= image_tag "profile-img.jpg", :alt => "profile image" %>
     </header>
     <main>
       <div class="categories section-wrapper">

@@ -7,16 +7,22 @@
       </div>
     </header>
     <main>
-        <% @animals.each do |animal| %>
-            <h3><%= animal.name %></h3>
-            <div class="show-img">
-              <%= link_to symptoms_path(specie_id: animal.specie) do  %> 
-                <%if animal.photo.attached?%>
-                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-                <% end %>
-              <% end %>
-            </div>
-        <% end %>
+      <% @animals.each do |animal| %>
+        <h3><%= animal.name %></h3>
+        <div class="show-img">
+          <%= link_to symptoms_path(specie_id: animal.specie) do  %>
+            <%if animal.photo.attached?%>
+              <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
+        </div>
+      </div>
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
