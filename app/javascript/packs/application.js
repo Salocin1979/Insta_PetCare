@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-// import toggler from "../plugins/toggle.js";
+//import toggler from "../plugins/toggle.js";
 
 
 // Internal imports, e.g:

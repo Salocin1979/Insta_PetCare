@@ -17,7 +17,6 @@
           <%end%>
         </div>
       </div>
-      <p></p>
       <div class="popular section-wrapper">
         <div class="flex-header">
           <h2>My pet symptoms:</h2>
@@ -28,43 +27,50 @@
       </div>
       <div class="promo">
         <div class="items promo-items">
+          <div class="promo-item">
+            <div class="promo-img">
+              <%= image_tag "icon-logo.png", :alt => "new pet" %>
+            </div>
+            <div class="promo-info">
+              <h3>New pet home</h3>
+              <a><%= link_to 'Add pet',  new_animal_path %></a>
+            </div>
+          </div>
           <% @animals.each do |animal| %>
-            <%if animal.user == current_user %>
+          <% if animal.user == current_user%>
             <div class="promo-item">
               <div class="promo-img">
                 <%if animal.photo.attached?%>
                   <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
                 <% end %>
-          <div class="promo-item">
-            <div class="promo-img">
-              <%= image_tag "icon-logo.png", :alt => "new pet" %>
               </div>
               <div class="promo-info">
-                <h3>New pet home</h3>
-                <a><%= link_to 'Add pet',  new_animal_path %></a>
+                <h3><%= animal.name %></h3>
+                <p><%= animal.age %> years old</p>
+                <a><%= link_to 'More info', animal_path(animal) %></a>
+              </div>
             </div>
           <% end %>
           <% end %>
         </div>
-      </div>
-      <div class="popular section-wrapper">
-        <div class="flex-header">
-          <h2>My prescriptions</h2>
-          <%= link_to root_path do %>
-            <button class="cta">See all</button>
-          <%end%>
-          <% @consultations.each do |consultation| %>
-          <%= link_to 'Accept New Consultation', consultation_path(consultation)%>
-          <% end %>
+        <div class="popular section-wrapper">
+          <div class="flex-header">
+            <h2>My prescriptions</h2>
+            <%= link_to root_path do %>
+              <button class="cta">See all</button>
+            <%end%>
+            <% @consultations.each do |consultation| %>
+              <%= link_to 'Accept New Consultation', consultation_path(consultation)%>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% else %>
-    <div class="categories section-wrapper">
-      <div class="flex-header">
-        <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
+    <% else %>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
+        </div>
       </div>
-    </div>
-  </main>
-<% end %>
+    </main>
+  <% end %>
 </div>
