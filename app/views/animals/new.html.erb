@@ -1,8 +1,14 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Add your animal</h3>
+<div>
+  <% if user_signed_in? %>
+    <header class="user-header">
+      <div class="info">
+        <h1>Add your new pet</h1>
+        <p>Please fill out the form</p>
+      </div>
+    </header>
+    <main>
+      <div class= "popular section-wrapper">
+        <h3>Add your animal:</h3>
         <%= simple_form_for @animal do |f| %>
           <%= f.input :name %>
           <%= f.input :age %>
@@ -14,4 +20,7 @@
       </div>
     </div>
   </div>
+</div>
+</main>
+<%end%>
 </div>
