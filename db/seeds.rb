@@ -31,6 +31,7 @@ animal_one = Animal.create!(name: "Balto",
 animal_one.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 
+
 puts "Creating the symptoms in the database..."
 
 Symptom.create!(suggestion: "Biting",
