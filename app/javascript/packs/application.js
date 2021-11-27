@@ -24,11 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-<<<<<<< HEAD
-// import toggler from "../plugins/toggle.js";
-=======
 //import toggler from "../plugins/toggle.js";
->>>>>>> 8bd53798289c7e987672dd286218e123d39cad45
 
 
 // Internal imports, e.g:
@@ -38,11 +34,7 @@ import  twilioInit  from '../plugins/twilio.js';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-<<<<<<< HEAD
-  // toggler()
-=======
   //toggler()
->>>>>>> 8bd53798289c7e987672dd286218e123d39cad45
   if (document.querySelector('.twilio-video')) {
     twilioInit();
   }
