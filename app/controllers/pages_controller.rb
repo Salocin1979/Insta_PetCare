@@ -11,6 +11,7 @@ class PagesController < ApplicationController
         flash[:notice] = "Check the new Prescription for #{prescription.consultation.animal.name} from the vet!" unless prescription.read 
         prescription.update(read: true)
       end
+      @consultations = current_user.consultations.select{|consultation| consultation.date.today?}
     end
   end
 end

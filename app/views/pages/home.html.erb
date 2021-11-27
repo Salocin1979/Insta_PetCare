@@ -50,6 +50,9 @@
           <%= link_to root_path do %>
             <button class="cta">See all</button>
           <%end%>
+          <% @consultations.each do |consultation| %>
+          <%= link_to 'Accept New Consultation', consultation_path(consultation)%>
+          <% end %>
         </div>
       </div>
     <% else %>
