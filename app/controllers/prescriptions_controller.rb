@@ -38,6 +38,15 @@ class PrescriptionsController < ApplicationController
       end
     end
 
+    def destroy
+        @user = current_user
+        if is_veterinarian = true
+        @prescription = Prescription.find(params[:id])
+        @prescription.destroy
+        redirect_to consultation_prescriptions_path(@prescription.consultation)
+        end
+    end
+
     private
 
     def set_prescription

@@ -1,13 +1,14 @@
 <div class= "container-fluid">
   <div class= "container_page">
-    <div class = "logo_container">
-      <img class="row title-logo" src="https://vetfini.com/wp-content/uploads/liberty-vet-clinic.png?width=150px" alt="">
+    <div class= "logo_title">
+      <div class= "logo_container" >
+        <img class="row title-logo" src="https://vetfini.com/wp-content/uploads/liberty-vet-clinic.png?width=150px" alt="">
+      </div>
+      <div class="row title_presc">
+        <h5>Prescription No. <%= @prescription.id %></h5>
+        <h5>Dr. <%= @prescription.consultation.user.last_name%></h5>  <%# from consultation.user we get the vet  # out of animal id we get user %>
+      </div>
     </div>
-    <div class="row title_presc">
-      <h5>Prescription No. <%= @prescription.id %></h5>
-      <h5>Dr. <%= @prescription.consultation.user.last_name%></h5>  <%# from consultation.user we get the vet  # out of animal id we get user %>
-    </div>
-
     <div>
       <table class="table_info">
         <tbody  class="tb_table">
@@ -32,15 +33,17 @@
     </div>
     
     <div>
-      <table class="table_content">
+      <table class="table_info">
         <tbody  >
-          <%= @prescription.content %>
+          <div class="table_content">
+            <%= @prescription.content %>
+          </div>
         </tbody>
       </table>
     </div>
 
     <div>
-      <table class="table">
+      <table class="table_info">
         <tbody  class="tb_table">
           <tr>
             <td>
@@ -61,6 +64,21 @@
         </tbody>
       </table>
     </div>
-    <%= link_to  "Back", consultation_prescriptions_path, class: 'btn btn-primary mt-3'%>
+    <div class= "end_page">
+      <table id= "end_con" class="table_info">
+        <tbody  >
+          <tr>
+            <td >
+              <ul id= "end_page" class="list-inline" style="margin-bottom: 0px;">
+                <li style="display:inline"><h5>Thank you for using InstaPet Care Service!</h5></li>
+                <li style="display:inline"><h5> You can contact me on +230 578 4562</h5></li>
+                <li style="display:inline"><h5> My email address is <%= @prescription.consultation.user.email %></h5></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <%# link_to  "Back", consultation_prescriptions_path, class: 'btn btn-primary mt-3'%>
   </div>
 </div>

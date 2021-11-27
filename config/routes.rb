@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :consultations, only: [:index, :new, :create, :show] do
     resources :prescriptions, only: [:index, :new, :create, :show, :edit]
   end
+  resources :prescriptions, only: [ :destroy ]
 end

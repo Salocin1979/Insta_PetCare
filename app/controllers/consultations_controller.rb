@@ -24,7 +24,7 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.find(params[:id])
     @token = generate_token(@consultation)
   end
-  
+
 
   private
   
