@@ -20,12 +20,14 @@
           </div>
         </div>
 
-        <div class="nav-item">
-           <%= link_to new_consultation_path do %>
-            <%= image_tag "icon-meds.png", :alt => "call icone" %>
-            <span>Prescriptions</span>
-          <% end %>
-        </div>
+        <% if current_user.is_veterinarian = true %>
+          <div class="nav-item">        
+            <%= link_to consultations_path do %>
+             <%= image_tag "icon-meds.png", :alt => "call icone" %>
+             <span>Consultations</span>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
