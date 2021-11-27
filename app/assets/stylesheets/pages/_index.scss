@@ -5,12 +5,26 @@
 
 .main-index-animal {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+
+  h3{
+
+  }
 }
 .show-img {
     height: 200px;
     width: 200px;
-    margin-right: 2rem;
+    border: 7px solid var(--green-call);
+    transition: border 200ms;
+    border-radius: 100%;
+    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.44);
+    padding: 7px;
+    background-color: white;
+
+    &:hover {
+      border:7px solid var(--main-color);
+    }
 
     img {
       object-fit: cover;
