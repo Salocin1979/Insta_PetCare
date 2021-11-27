@@ -6,7 +6,9 @@
         <p>How can we help you <br>
           today ?</p>
       </div>
-      <%= image_tag "fred-img.jpg", :alt => "profile image" %>
+      <%if current_user.photo.attached?%>
+              <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
     </header>
     <main>
       <div class="categories section-wrapper">
