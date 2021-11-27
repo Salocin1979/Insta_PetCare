@@ -5,7 +5,9 @@
         <h1><%= @animal.name %> 🤍 </h1>
         <p>Your pet ID card</p>
       </div>
-      <%= cl_image_tag("Balto") %>
+        <%if @animal.photo.attached?%>
+          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
     </header>
     <main>
 
