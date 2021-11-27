@@ -11,7 +11,7 @@ class ConsultationsController < ApplicationController
 
   def create
     @consultation = Consultation.new(consultation_params)
-    @consultation.user = current_user
+    @consultation.date = Date.today
     @consultation.animal = Animal.find(consultation_params[:animal_id])
     if @consultation.save
       redirect_to consultation_path(@consultation)
@@ -25,11 +25,15 @@ class ConsultationsController < ApplicationController
     @token = generate_token(@consultation)
   end
   
+  def destroy
+    @consultation.destroy
+    redirect_to consultations_path
+  end
 
-  private
+    private
   
   def consultation_params
-    params.require(:consultation).permit(:date, :animal_id)
+    params.require(:consultation).permit(:animal_id, :user_id)
 
   end
 

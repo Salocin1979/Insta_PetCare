@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # validates :last_name, presence: true
 
   has_many :animals, dependent: :destroy
+  has_many :consultations, dependent: :destroy
 end
