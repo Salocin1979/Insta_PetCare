@@ -1,27 +1,28 @@
-<div class="row-fluid">
-  <div class="span5 offset1">
-    <span class="label label-important"><h1>List of Prescriptions</h1></span>
-      <br />
-      <br />
-      <br />
-      <table class="table table-bordered table-condensed table-stripe table-hover">
-        <tr>
-          <th>Number</th>
-          <th> Date </th>
-          <th>Pet</th>
-          <th>PDF</th>
-          <th>Show</th>
-        </tr>
-        <% @prescriptions.each do |prescription| %>
+<div>
+ <p></p>
+    <div class="popular section-wrapper">
+      <div class="flex-header">
+        <h2>List of Prescriptions</h2>
+      </div>
+      <div>
+        <table class="table table-bordered table-condensed table-stripe table-hover">
           <tr>
-            <td><i class="icon-calendar"></i><%= prescription.id %></td>     
-            <td><i class="icon-calendar"></i><%= prescription.date %></td>
-            <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
-            <td> <%= link_to 'PDF', consultation_prescription_path(prescription.consultation, prescription, format: :pdf) %></td>   
-            <td> <%= link_to 'Show', consultation_prescription_path(prescription.consultation, prescription) %></td>   
+            <th>No:</th>
+            <th>Date </th>
+            <th>Pet</th>
+            <th><i class="fas fa-external-link-alt"></i></th>
+            <th><i class="fa fa-trash fa-1x"></i></th>
           </tr>
-        <% end %>
-      </table>
-      <br />
-  </div>
+          <% @prescriptions.each do |prescription| %>
+            <tr>
+              <td><i class="icon-calendar"></i><%= prescription.id %></td>     
+              <td><i class="icon-calendar"></i><%= prescription.date %></td>
+              <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
+              <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription)   do %> <i class="fas fa-external-link-alt"></i><% end %></td>  
+              <td> <%= link_to prescription_path(prescription) , method: :delete,  data: { confirm: "Are you sure?" } do %> <i class="fa fa-trash fa-1x"></i> <% end %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
 </div>

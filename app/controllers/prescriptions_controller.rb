@@ -7,7 +7,7 @@ class PrescriptionsController < ApplicationController
 
     def new
        @user = current_user
-       if is_veterinarian = true
+       if current_user.is_veterinarian
           @consultation =  Consultation.find(params[:consultation_id])
          @prescription = Prescription.new
        #@consultations = Consultation.all
@@ -16,7 +16,7 @@ class PrescriptionsController < ApplicationController
 
     def create
         @user = current_user
-        if is_veterinarian = true
+        if current_user.is_veterinarian
             @prescription = Prescription.new(prescription_params)
             @consultation = Consultation.find(params[:consultation_id])
             @prescription.consultation = @consultation
@@ -33,9 +33,18 @@ class PrescriptionsController < ApplicationController
       respond_to do |format|
         format.html
           format.pdf do
-          render pdf: "file_name", template: "prescriptions/show.html.erb"  # Excluding ".pdf" extension.
-        end
+          render pdf: "file_name", template: "prescriptions/show.html.erb", layout: "pdf"  # Excluding ".pdf" extension.
+          end
       end
+    end
+
+    def destroy
+        @user = current_user
+        if current_user.is_veterinarian 
+        @prescription = Prescription.find(params[:id])
+        @prescription.destroy
+        redirect_to consultation_prescriptions_path(@prescription.consultation)
+        end
     end
 
     private

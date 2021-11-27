@@ -1,0 +1,62 @@
+
+.container_page {
+    background-color: white;
+    border: 2px solid black;
+    font-size: 20px;
+    height: 1000px;
+    width: 1000px;
+    }
+    
+    .container_create {
+        width: 100%;
+        margin: auto;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .logo_title {
+    background-color: #eaeaea;
+    }
+    
+    .bg-white {
+       width: 100%;
+    }
+    
+    #end_page {
+        padding-left: 350px; 
+    }
+
+    #end_con{
+        background-color: #eaeaea;
+    }
+    
+    .title_presc {
+        padding-left: 400px;
+        font-size: 25px;
+    }
+    
+   
+    
+    .title-logo {
+         padding-left: 450px;  
+         width: 100px;
+    }
+    
+    .table_info {
+       border-bottom: 1px solid black;
+       width: 100%;
+       height: 150px;
+       padding-bottom: 20px;
+    }
+
+    .table_content {
+    padding-top: 20px;
+    height: 200px;
+    padding-left: 45px;
+   }
+    
+    .tb_table{
+        display: flex;
+        flex-direction: column;
+    }
+    

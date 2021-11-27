@@ -1,26 +1,29 @@
-<% if @user.is_veterinarian %>
-  <div class="row-fluid">
-    <div class="span5 offset1">
-      <span class="label label-important"><h1>Listing consultations</h1></span>
-        <br />
-        <br />
-        <br />
-      <table class="table table-bordered table-condensed table-stripe">
-        <tr>
-          <th>Date visit</th>
-            <th>Animal</th>
-            <th>Create Prescription</th>
-        </tr>
+<div>
+  <% if @user.is_veterinarian %>
+    <p></p>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>List of consultations</h2>
+        </div>
+        <div>
+          <table class="table table-bordered table-condensed table-stripe">
+            <tr>
+              <th>Date </th>
+                <th>Pet Owner</th>
+                <th>Create Prescription</th>
+                <th>Show</th>
+            </tr>
 
-      <% @consultations.each do |consultation| %>
-          <tr>
-            <td><%= consultation.date %></td>
-            <td><%= consultation.animal.name %></td>
-            <td><%= link_to new_consultation_prescription_path(consultation.id) do  %> <i class="fas fa-external-link-square-alt fa-1x"></i> <% end %></td>
-          </tr>
-        <% end %>
-      </table>
-        <br />
-    </div>
-  </div>
-<% end %>
+            <% @consultations.each do |consultation| %>
+              <tr>
+                <td><%= consultation.date %></td>
+                <td><%= consultation.animal.name %></td>
+                <td><%= link_to new_consultation_prescription_path(consultation.id) do  %> <i class="fas fa-plus"></i></i> <% end %></td>
+                <td><%= link_to consultation_prescriptions_path(consultation.id) do  %> <i class="fas fa-external-link-square-alt fa-1x"></i> <% end %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+  <% end %>
+</div>

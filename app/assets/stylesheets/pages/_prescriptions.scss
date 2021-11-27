@@ -37,7 +37,7 @@ background-color: white;
 }
 
 
-.title_logo {
+.title-logo {
     display: flex;
     width: 100px;
 }
@@ -52,19 +52,8 @@ background-color: white;
     flex-direction: column;
 }
 
-.end_page {
-    text-align: center;
-    padding: 5px;
-    background-color: #eaeaea;
-  
-    a {
-    font-size: 20px;
-    color:  #0173ff;
-    margin: 0 2px;
-    }
- 
-    .fas {
-    color: #BF0F12;
-    }
-  }
-  
+
+.table_content {
+    height: 150px;
+ }
+
