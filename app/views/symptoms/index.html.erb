@@ -1,7 +1,16 @@
 <h1>Symptom page</h1>
-<% if specie_dog = dog %>
-<div class="title-wrapper">
-  <div class="container">
-    <h1 class="title">Your Vet online</h1>
-  </div>
-</div>
+
+
+    <h2 class="description">description of the treatment </h2>
+      <ul>
+    <% @symptoms.each do |symptom| %>
+      <li>
+        <div class="symp">suggestion: <%= symptom.suggestion %>
+          <span class="tooltiptext">description: <%= symptom.description %></span>
+        </div>
+         </li>
+    <% end %>
+    </ul>
+
+
+

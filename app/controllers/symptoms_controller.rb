@@ -1,6 +1,6 @@
 class SymptomsController < ApplicationController
   def index
-    @symptoms = Symptom.all.where(specie: params[:specie_id])
+    @symptoms = Specie.find(params[:specie_id]).symptoms
   end
 
     def show
