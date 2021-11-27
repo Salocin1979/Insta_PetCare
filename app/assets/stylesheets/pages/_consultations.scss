@@ -8,8 +8,9 @@
 }
 
   .participant {
-  border-radius: 16px;
-  overflow: hidden;
+    position:absolute;
+    border-radius: 16px;
+    overflow:visible;
   video {
     border-radius: 16px;
     width: 100%;
@@ -24,11 +25,11 @@
   align-items: center;
 
   #userVideo {
-    width: auto;
+    width: 300px;
     position:relative;
     height: 400px;
     top: 60px;
-    right: 96x;
+    right: 108px;
     object-fit: cover;
     background-color: gray;
   }
