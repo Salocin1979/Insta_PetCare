@@ -29,6 +29,7 @@
       <div class="promo">
         <div class="items promo-items">
           <% @animals.each do |animal| %>
+            <%if animal.user == current_user %>
             <div class="promo-item">
               <div class="promo-img">
                 <%if animal.photo.attached?%>
@@ -41,6 +42,7 @@
                 <a><%= link_to 'More info', animal_path(animal) %></a>
               </div>
             </div>
+          <% end %>
           <% end %>
         </div>
       </div>
