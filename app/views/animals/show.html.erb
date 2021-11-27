@@ -2,16 +2,19 @@
   <% if user_signed_in? %>
     <header class="user-header">
       <div class="info">
-        <h1>Hi <%= @animal.name %></h1>
-        <p>How can we help you <br>
-          today ?</p>
+        <h1><%= @animal.name %> 🤍 </h1>
+        <p>Your pet ID card</p>
       </div>
-      <%= cl_image_tag("Balto") %>
+        <%if @animal.photo.attached?%>
+          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
     </header>
     <main>
-      <div class="categories section-wrapper">
-        <div class="flex-header">
-          <h3><%= @animal.name %> Infos :</h3>
+
+    <div class="wrap-container">
+        <div class="categories pet-info">
+          <div>
+          </div>
         </div>
                   <h3><%= @animal.age %> years old</h3>
           <h3><%= @animal.specie.name %></h3>
@@ -43,13 +46,8 @@
       <div class="promo">
         <div class="items promo-items">
         </div>
-        <div class="promo-info">
-        </div>
-      </div>
-      <div class="popular section-wrapper">
-        <div class="flex-header">
-        </div>
-      </div>
+    </div>
+
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
@@ -59,3 +57,13 @@
     </main>
   <% end %>
 </div>
+
+
+
+
+
+         <%# <h2>Prescriptions :</h2>
+          <p><% @prescriptions.each do |prescription| %>
+             <%# <%= prescription.content %>
+            <%#<% end %>
+

@@ -13,8 +13,8 @@ Specie.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
-user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: true)
-user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
+user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: false)
+user_two = User.create!(first_name: "Emily", last_name:"Santos", email: "emily@gmail.com", password:"123456", is_veterinarian: true)
 
 puts "Creating species list"
 specie_dog = Specie.create!(name: "Dog")
@@ -29,7 +29,20 @@ animal_one = Animal.create!(name: "Balto",
                 specie: Specie.find_by(name: "Dog"),
                 user: user_one)
 animal_one.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-
+file = URI.open('https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg')
+animal_two = Animal.create!(name: "Leo",
+                age: "2",
+                weight: "7",
+                specie: Specie.find_by(name: "Cat"),
+                user: user_one)
+animal_two.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+file = URI.open('https://cdn.mos.cms.futurecdn.net/BX7vjSt8KMtcBHyisvcSPK-1200-80.jpg')
+animal_three = Animal.create!(name: "Daisy",
+                age: "5",
+                weight: "3",
+                specie: Specie.find_by(name: "Chicken"),
+                user: user_one)
+animal_three.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 puts "Creating the symptoms in the database..."
 

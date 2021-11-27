@@ -7,8 +7,8 @@
       </div>
     </header>
     <main>
+    <div class="main-index-animal" >
       <% @animals.each do |animal| %>
-        <h3><%= animal.name %></h3>
         <div class="show-img">
           <%= link_to symptoms_path(specie_id: animal.specie) do  %>
             <%if animal.photo.attached?%>
@@ -16,13 +16,9 @@
             <% end %>
           <% end %>
         </div>
-      <% end %>
-    <% else %>
-      <div class="categories section-wrapper">
-        <div class="flex-header">
-          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
+        <h3><%= animal.name %></h3>
         </div>
-      </div>
+      <% end %>
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
