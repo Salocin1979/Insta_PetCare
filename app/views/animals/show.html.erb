@@ -8,27 +8,18 @@
       <%= cl_image_tag("Balto") %>
     </header>
     <main>
-      <div class="categories section-wrapper">
-        <div class="flex-header">
-          <h3><%= @animal.name %> Infos :</h3>
-          <p><%= @animal.age %> years old</p>
-          <p><%= @animal.specie.name %><p>
+
+    <div class="wrap-container">
+        <div class="categories pet-info">
+          <div>
+          </div>
         </div>
-      </div>
-      <div class="popular section-wrapper">
-        <div class="flex-header">
-          <h2>Prescriptions :</h2>
-          <p><% @prescriptions.each do |prescription| %>
-              <%= prescription.content %>
-            <% end %></p>
+
+      <div class="categories pet-info">
+          <div>
+          </div>
         </div>
-      </div>
-      <div class="promo">
-        <div class="items promo-items">
-        </div>
-        <div class="promo-info">
-        </div>
-      </div>
+    </div>
 
     <% else %>
       <div class="categories section-wrapper">
@@ -39,3 +30,13 @@
     </main>
   <% end %>
 </div>
+
+
+
+
+
+         <%# <h2>Prescriptions :</h2>
+          <p><% @prescriptions.each do |prescription| %>
+             <%# <%= prescription.content %>
+            <%#<% end %>
+
