@@ -7,8 +7,8 @@
       </div>
     </header>
     <main>
+     <% @animals.each do |animal| %>
     <div class="main-index-animal" >
-      <% @animals.each do |animal| %>
         <div class="show-img">
           <%= link_to symptoms_path(specie_id: animal.specie) do  %>
             <%if animal.photo.attached?%>
