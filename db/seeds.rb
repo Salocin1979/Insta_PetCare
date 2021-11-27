@@ -13,8 +13,8 @@ Specie.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
-user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: true)
-user_two = User.create!(first_name: "Nico", last_name:"Bagnath", email: "nico@gmail.com", password:"123456", is_veterinarian: false)
+user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: false)
+user_two = User.create!(first_name: "Emily", last_name:"Santos", email: "emily@gmail.com", password:"123456", is_veterinarian: true)
 
 puts "Creating species list"
 specie_dog = Specie.create!(name: "Dog")

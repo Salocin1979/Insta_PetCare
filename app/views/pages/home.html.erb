@@ -2,11 +2,11 @@
   <% if user_signed_in? %>
     <header class="user-header">
       <div class="info">
-        <h1>Hello Emily,</h1>
+        <h1>Hello <%= current_user.first_name %>,</h1>
         <p>How can we help you <br>
           today ?</p>
       </div>
-      <%= image_tag "profile-img.jpg", :alt => "profile image" %>
+      <%= image_tag "fred-img.jpg", :alt => "profile image" %>
     </header>
     <main>
       <div class="categories section-wrapper">
@@ -52,13 +52,16 @@
           </div>
         <% end %>
       </div>
-    </div>
-    <div class="popular section-wrapper">
-      <div class="flex-header">
-        <h2>My prescriptions</h2>
-        <%= link_to root_path do %>
-          <button class="cta">See all</button>
-        <%end%>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <h2>My prescriptions</h2>
+          <%= link_to root_path do %>
+            <button class="cta">See all</button>
+          <%end%>
+          <% @consultations.each do |consultation| %>
+          <%= link_to 'Accept New Consultation', consultation_path(consultation)%>
+          <% end %>
+        </div>
       </div>
     </div>
   <% else %>
