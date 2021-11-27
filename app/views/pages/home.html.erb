@@ -4,7 +4,7 @@
       <div class="info">
         <h1>Hello <%= current_user.first_name %>,</h1>
         <p>How can we help you <br>
-           today ?</p>
+          today ?</p>
       </div>
       <%= image_tag "fred-img.jpg", :alt => "profile image" %>
     </header>
@@ -20,7 +20,7 @@
       <p></p>
       <div class="popular section-wrapper">
         <div class="flex-header">
-          <h2>My pet symptoms!</h2>
+          <h2>My pet symptoms:</h2>
           <%= link_to animals_path do %>
             <button class="cta">See all</button>
           <%end%>
@@ -28,21 +28,29 @@
       </div>
       <div class="promo">
         <div class="items promo-items">
-          <% @animals.each do |animal| %>
-            <div class="promo-item">
-              <div class="promo-img">
-                <%if animal.photo.attached?%>
-                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-                <% end %>
+          <div class="promo-item">
+            <div class="promo-img">
+              <%= image_tag "icon-logo.png", :alt => "new pet" %>
               </div>
               <div class="promo-info">
-                <h3><%= animal.name %></h3>
-                <p><%= animal.age %> years old</p>
-                <a><%= link_to 'More info', animal_path(animal) %></a>
-              </div>
+                <h3>New pet home</h3>
+                <a><%= link_to 'Add pet',  new_animal_path %></a>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% @animals.each do |animal| %>
+          <div class="promo-item">
+            <div class="promo-img">
+              <%if animal.photo.attached?%>
+                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+            </div>
+            <div class="promo-info">
+              <h3><%= animal.name %></h3>
+              <p><%= animal.age %> years old</p>
+              <a><%= link_to 'More info', animal_path(animal) %></a>
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="popular section-wrapper">
         <div class="flex-header">
@@ -55,12 +63,13 @@
           <% end %>
         </div>
       </div>
-    <% else %>
-      <div class="categories section-wrapper">
-        <div class="flex-header">
-          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
-        </div>
+    </div>
+  <% else %>
+    <div class="categories section-wrapper">
+      <div class="flex-header">
+        <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
       </div>
-    </main>
-  <% end %>
+    </div>
+  </main>
+<% end %>
 </div>

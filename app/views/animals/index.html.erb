@@ -7,14 +7,16 @@
       </div>
     </header>
     <main>
+    <div class="main-index-animal" >
       <% @animals.each do |animal| %>
-        <h3><%= animal.name %></h3>
         <div class="show-img">
           <%= link_to symptoms_path(specie_id: animal.specie) do  %>
             <%if animal.photo.attached?%>
               <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
           <% end %>
+        </div>
+        <h3><%= animal.name %></h3>
         </div>
       <% end %>
     <% else %>
@@ -23,7 +25,6 @@
           <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
         </div>
       </div>
-
     </main>
   <% end %>
 </div>
