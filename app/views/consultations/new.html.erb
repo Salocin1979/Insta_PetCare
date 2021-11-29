@@ -10,7 +10,7 @@
       <%= simple_form_for [@animal, @user, @consultation] do |f| %>
         <div class= "popular section-wrapper">
           <%= f.association :animal, selected: @animal %>
-          <%= f.association :user, label_method: :first_name %>
+          <%= f.association :user, :collection => User.where(is_veterinarian: true), label: "Available vet", label_method: :first_name %>
         </div>
         <div>
         <%= f.submit "Submit", class: "btn btn-success"%>
