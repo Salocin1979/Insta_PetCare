@@ -1,16 +1,27 @@
-<h1>Symptom page</h1>
-
-
-    <h2 class="description">description of the treatment </h2>
+<div>
+  <% if user_signed_in? %>
+    <header class="user-header">
+      <div class="info">
+        <h1>Your Pet's Symptoms</h1>
+        <p>Descriptions of treatments</p>
+      </div>
+    </header>
+    <main>
       <ul>
-    <% @symptoms.each do |symptom| %>
-      <li>
-        <div class="symp">suggestion: <%= symptom.suggestion %>
-          <span class="tooltiptext">description: <%= symptom.description %></span>
+        <% @symptoms.each do |symptom| %>
+          <li>
+            <div class="symp">suggestion: <%= symptom.suggestion %>
+              <span class="tooltiptext">description: <%= symptom.description %></span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </main>
+        <% else %>
+      <div class="categories section-wrapper">
+        <div class="flex-header">
+          <%= link_to "Please Log In", new_user_session_path, class: "nav-link" %>
         </div>
-         </li>
-    <% end %>
-    </ul>
-
-
-
+      </div>
+      <% end %>
+  </div>

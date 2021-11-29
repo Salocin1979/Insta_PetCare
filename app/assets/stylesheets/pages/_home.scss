@@ -17,6 +17,15 @@
     --div: #F2F2F2;
 }
 
+.nav-link {
+  padding: 5px 12px;
+	background-color: var(--green-call);
+	color: black;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 5px;
+}
 body {
     background: var(--background);
 }

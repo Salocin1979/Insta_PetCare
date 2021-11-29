@@ -1,18 +1,44 @@
 .pet-value{
 	padding: 5px 12px;
-	background-color: rgba(255,0,0,0.4);
+	background-color: #DE8F6E;
 	color: black;
 	border-radius: 5px;
 	display: inline-flex;
 	align-items: center;
 	margin-left: 15px;
-  font-size: 16px;
+  font-size: 18px;
+
+  p {
+    align-items: center;
+  }
 
 	img{
 		width: auto;
 		height: 12px;
 		margin-right: 7px;
 	}
+}
+
+.pet-prescription{
+  padding: 5px 12px;
+	background-color: #9CEAEF;
+	color: black;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 15px;
+  font-size: 18px;
+}
+
+.pet-description {
+  padding: 5px 12px;
+	background-color: #FFA630;
+	color: black;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 15px;
+  font-size: 18px;
 }
 
 .info-line {
@@ -26,7 +52,9 @@
 .wrap-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .pet-info {
