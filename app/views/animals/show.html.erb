@@ -33,15 +33,14 @@
           <table class="table table-bordered table-condensed table-stripe table-hover">
             <tr>
               <th>Date </th>
-              <th><i class="fas fa-external-link-alt"></i></th>
-              <th><i class="fas fa-file-pdf"></i></i></th>
+              <th>Vet</th>
+              <th>PDF</i></i></th>
             </tr>
             <% @prescriptions.each do |prescription| %>
               <tr>
-                <td><i class="icon-calendar"></i><%= prescription.id %></td>
                 <td><i class="icon-calendar"></i><%= prescription.date %></td>
-                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription) do %> <i class="fas fa-external-link-alt"> <% end %> </td>
-                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription, format: :pdf) do %> <i class="fas fa-download"></i> <% end %>  </td>
+                <td><%=  prescription.consultation.user.first_name %> </td>
+                <td><%= link_to consultation_prescription_path(prescription.consultation, prescription, format: :pdf) do %> <i class="fas fa-download"></i> <% end %></td>
               </tr>
             <% end %>
           </table>
