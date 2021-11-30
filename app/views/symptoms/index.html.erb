@@ -2,15 +2,26 @@
 
 
     <h2 class="description">description of the treatment </h2>
-      <ul>
-    <% @symptoms.each do |symptom| %>
-      <li>
-        <div class="symp">suggestion: <%= symptom.suggestion %>
-          <span class="tooltiptext">description: <%= symptom.description %></span>
+
+    <div id="accordion">
+      <% @symptoms.each_with_index do |symptom,index| %>
+        <div class="card">
+          <div class="card-header" id="heading<%= index %>">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+                 <%= symptom.suggestion%>
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapse<%= index %>" class="collapse" aria-labelledby="heading<%= index %>" data-parent="#accordion">
+            <div class="card-body">
+              <%= symptom.description%>
+            </div>
+          </div>
         </div>
-         </li>
-    <% end %>
-    </ul>
+      <% end %>
+    </div>
 
 
 

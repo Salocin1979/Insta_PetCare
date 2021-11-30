@@ -47,6 +47,30 @@
   padding: 0;
 }
 
+buttons-panel{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#remote-video{
+  border-radius: 15px;
+  video{
+    width: 100%;
+    height: 770px;
+    border-radius: 15px;
+  }
+}
+
+#local-video{
+  border-radius: 15px;
+  video{
+    border-radius: 15px;
+    width: 100%;
+    height: 300px;
+  }
+}
+
 
 // #userVideo {
 //   width: 200px;

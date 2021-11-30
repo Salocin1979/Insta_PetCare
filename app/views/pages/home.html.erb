@@ -5,8 +5,11 @@
         <h1>Hello <%= current_user.first_name %>,</h1>
         <p>How can we help you <br>
           today ?</p>
+       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "logout" %>
       </div>
-      <%= image_tag "fred-img.jpg", :alt => "profile image" %>
+      <%if current_user.photo.attached?%>
+         <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
     </header>
     <main>
       <div class="categories section-wrapper">
@@ -50,9 +53,11 @@
                 <a><%= link_to 'More info', animal_path(animal) %></a>
               </div>
             </div>
-          <% end %>
+            <% end %>
           <% end %>
         </div>
+
+        <% if current_user.is_veterinarian %>
         <div class="popular section-wrapper">
           <div class="flex-header">
             <h2>My prescriptions</h2>
@@ -64,7 +69,7 @@
             <% end %>
           </div>
         </div>
-      </div>
+      <% end %>
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
