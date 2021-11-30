@@ -39,6 +39,13 @@ a {
     align-items: center;
 }
 
+.logout{
+  border: none;
+  background: none;
+  color: var(--background);
+  font-weight: 700;
+}
+
 .cta {
   border: none;
   background: none;
@@ -526,3 +533,4 @@ main {
     margin-right: .5rem;
     color: orange;
 }
+
