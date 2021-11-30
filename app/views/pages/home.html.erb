@@ -5,10 +5,11 @@
         <h1>Hello <%= current_user.first_name %>,</h1>
         <p>How can we help you <br>
           today ?</p>
+       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>   
       </div>
       <%if current_user.photo.attached?%>
               <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
+      <% end %>
     </header>
     <main>
       <div class="categories section-wrapper">
