@@ -14,7 +14,7 @@ puts "Database cleaned"
 
 puts "Creating a user in the database..."
 file = URI.open('https://avatars.githubusercontent.com/u/84763826?v=4')
-user_one = User.create!(first_name: "Jeanpierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: false)
+user_one = User.create!(first_name: "JeanPierre", last_name: "Dupcuhe", email: "jeanpierre@gmail.com", password:"123456", is_veterinarian: false)
 user_one.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://avatars.githubusercontent.com/u/85242561?v=4')
