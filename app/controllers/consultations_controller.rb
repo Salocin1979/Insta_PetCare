@@ -11,6 +11,7 @@ class ConsultationsController < ApplicationController
 
   def create
     @consultation = Consultation.new(consultation_params)
+    # @user = User.where(is_veterinarian)
     @consultation.date = Date.today
     @consultation.animal = Animal.find(consultation_params[:animal_id])
     if @consultation.save
