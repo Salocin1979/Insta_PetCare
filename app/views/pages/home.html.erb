@@ -53,6 +53,8 @@
           <% end %>
           <% end %>
         </div>
+
+        <% if current_user.is_veterinarian %>
         <div class="popular section-wrapper">
           <div class="flex-header">
             <h2>My prescriptions</h2>
@@ -64,7 +66,7 @@
             <% end %>
           </div>
         </div>
-      </div>
+      <% end %>
     <% else %>
       <div class="categories section-wrapper">
         <div class="flex-header">
