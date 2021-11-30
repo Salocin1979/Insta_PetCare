@@ -13,31 +13,35 @@
 
     <div class="wrap-container">
         <div class="categories pet-info">
-          <div>
-          </div>
+           <p class="pet-value"><%= @animal.age %> years</p>
         </div>
-                  <h3><%= @animal.age %> years old</h3>
-          <h3><%= @animal.specie.name %></h3>
+        <div class="categories pet-info">
+           <p class="pet-value"><%= @animal.specie.name%></h3>
+        </div>
       </div>
-      <p></p>
       <div class="popular section-wrapper">
         <div class="flex-header">
-          <h2>Prescriptions :</h2>
+          <p class="pet-description">Description :</p>
+          <p>We found <%= @animal.name%> in the street with its collar after his owners abandoned him. He is an adult dog wiht a ship.</p>
+        </div>
+      </div>
+      <div class="popular section-wrapper">
+        <div class="flex-header">
+          <p class="pet-prescription" >Prescriptions :</h2>
         </div>
         <div>
           <table class="table table-bordered table-condensed table-stripe table-hover">
             <tr>
-              <th>No:</th>
               <th>Date </th>
               <th><i class="fas fa-external-link-alt"></i></th>
               <th><i class="fas fa-file-pdf"></i></i></th>
             </tr>
             <% @prescriptions.each do |prescription| %>
               <tr>
-                <td><i class="icon-calendar"></i><%= prescription.id %></td>     
+                <td><i class="icon-calendar"></i><%= prescription.id %></td>
                 <td><i class="icon-calendar"></i><%= prescription.date %></td>
-                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription) do %> <i class="fas fa-external-link-alt"> <% end %> </td>  
-                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription, format: :pdf) do %> <i class="fas fa-download"></i> <% end %>  </td> 
+                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription) do %> <i class="fas fa-external-link-alt"> <% end %> </td>
+                <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription, format: :pdf) do %> <i class="fas fa-download"></i> <% end %>  </td>
               </tr>
             <% end %>
           </table>
