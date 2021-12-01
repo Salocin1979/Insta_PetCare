@@ -4,12 +4,20 @@
     data-sid="<%= ENV["ACCOUNT_SID"] %>"
     data-room="<%= @consultation.url_room %>"
     data-token="<%= @token %>">
-      <div class="participant">
+      <div class="row justify-content-between">
+        <div class="col-7">
+          <div class="participant">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="remote-media-div text-center">
+            <video id="userVideo" autoplay muted="true" ></video>
+            <button id='leave-btn'>
+              Leave
+            </button>
+          </div>
+        </div>
       </div>
-      <video id="userVideo" autoplay muted="true" ></video>
-      <button id='leave-btn'>
-        X
-      </button>
     </div>
   <% else %>
     <div class="categories section-wrapper">

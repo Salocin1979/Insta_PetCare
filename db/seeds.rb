@@ -54,13 +54,13 @@ puts "Creating the symptoms in the database..."
 Symptom.create!(suggestion: "Biting",
                 description: "teach your dog to wear a head halter and basket muzzle.",
                 specie: specie_dog)
-Symptom.create!(suggestion:" Blue Gum)in Dogs",
+Symptom.create!(suggestion:" Blue Gum",
                 description: "Just give him some vitamin C for 3 days. Its a sign of of lack of vitality ",
                 specie: specie_dog)
-Symptom.create!(suggestion:"Pealed skin on the nose in Dogs",
+Symptom.create!(suggestion:"Pealed skin on the nose",
                 description: "put rehyydrated greasy cream to moistorise the dry area of the pealed nose.",
                 specie: specie_dog)
-Symptom.create!(suggestion:"vomit in Dogs",
+Symptom.create!(suggestion:"Vomitting",
                 description: "If  your dog has been vomiting for several times in hour, immediately call for veterinary help.",
                 specie: specie_dog)
 Symptom.create!(suggestion:"rapid heartbeating in Cats",

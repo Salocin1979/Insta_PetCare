@@ -1,3 +1,5 @@
+
+
 .user-btn {
   display: flex;
   flex-flow: row wrap;
@@ -7,67 +9,55 @@
   list-style: none;
 }
 
-  .participant {
-    position:absolute;
-    border-radius: 16px;
-    overflow:visible;
-  video {
-    border-radius: 16px;
-    width: 100%;
-  }
-}
-
-.remote-media-div {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  #userVideo {
-    width: 300px;
-    position:relative;
-    height: 400px;
-    top: 60px;
-    right: 108px;
-    object-fit: cover;
-    background-color: gray;
-  }
-
-  #leave-btn {
-    position: relative;
-        top: 300px;
-        right: 300px;
-  }
-
-}
 
 .consultation {
   top: 0 !important;
   padding: 0;
-}
+  width: 100vw;
 
-buttons-panel{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-#remote-video{
-  border-radius: 15px;
-  video{
+  .twilio-video{
     width: 100%;
-    height: 770px;
+    position: relative;
+
+    .participant {
+      width: 100%;
+      position: relative;
+      z-index: 0;
+
+      video {
+    width: 100vw !important;
+    height: 100vh;
+    object-fit: cover;
+    background-color: gray;
+    }
+    }
+
+    #userVideo {
+    width: 100px;
+    height: 100px;
     border-radius: 15px;
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    right: 30px;
+    object-fit: cover;
+    background-color: gray;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
   }
-}
-
-#local-video{
-  border-radius: 15px;
-  video{
-    border-radius: 15px;
-    width: 100%;
-    height: 300px;
+  #leave-btn {
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 30px;
+    border-radius: 100%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+    color: white;
+  }
   }
 }
 
