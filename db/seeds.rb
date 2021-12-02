@@ -51,53 +51,53 @@ animal_three.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jp
 
 puts "Creating the symptoms in the database..."
 
-Symptom.create!(suggestion: "Biting",
+Symptom.create!(suggestion: "Agressive and uncontrolled behaviour",
                 description: "teach your dog to wear a head halter and basket muzzle.",
                 specie: specie_dog)
-Symptom.create!(suggestion:" Blue Gum",
-                description: "Just give him some vitamin C for 3 days. Its a sign of of lack of vitality ",
+Symptom.create!(suggestion:"Sudden appearance of Blue Gum",
+                description: "Just give him some vitamin C for 3 days. Its a sign of lack of vitality ",
                 specie: specie_dog)
 Symptom.create!(suggestion:"Pealed skin on the nose",
                 description: "put rehyydrated greasy cream to moistorise the dry area of the pealed nose.",
                 specie: specie_dog)
-Symptom.create!(suggestion:"Vomitting",
+Symptom.create!(suggestion:"Vomitting repetitively in an uncontroled manner",
                 description: "If  your dog has been vomiting for several times in hour, immediately call for veterinary help.",
                 specie: specie_dog)
-Symptom.create!(suggestion:"rapid heartbeating in Cats",
+Symptom.create!(suggestion:"Sudden rapid heartbeating ",
                 description: "if your cat look weak , take her in a quiet and dark place to alow her to callm done ,then call the vet",
                 specie: specie_cat)
-Symptom.create!(suggestion:"Clumsy walk in Cats",
+Symptom.create!(suggestion:"Unstopable clumsy walk ",
                 description: "This is sign of low blood pressure. Hence need to get her rehydrated as soon as possible.",
                 specie: specie_cat)
-Symptom.create!(suggestion:"sufocating in cats",
+Symptom.create!(suggestion:"Feeling air sufocating ",
                 description: "take your cat outside and help breath fresh air. Do no overwhelm her and make sure she get some water ",
                 specie: specie_cat)
 Symptom.create!(suggestion:"white spot near the eyes ",
                 description: "This is probably due to an allergy. This is not critical. Get the advice of a vet when possible ",
                 specie: specie_cat)
-Symptom.create!(suggestion:"Dizzy in Dogs",
-                description: "if there is no reaction while showing your fingers in front of him, this means that the dog will soon fait.get a vet help as soon as possible",
+Symptom.create!(suggestion:"Acting in a dizzy way ",
+                description: "if there is no reaction while showing your fingers in front of him, this means that the dog will soon faint.get a vet help as soon as possible",
                 specie: specie_dog)
-Symptom.create!(suggestion:"diarrhea in Dogs",
+Symptom.create!(suggestion:"suffering from stoppable diarrhea",
                 description: "Get him rehydrated with some water mixed with wter and suger ",
                 specie: specie_cat)
-Symptom.create!(suggestion:"Blind Quiet Eye in cat",
+Symptom.create!(suggestion:" Sudden lindness of an eye ",
                 description: "Your veterinarian will try to localize the disease and will often refer you to a veterinary ophthalmologist.",
                 specie: specie_cat)
-Symptom.create!(suggestion:"Blind Quiet Eye in Dogs",
+Symptom.create!(suggestion:"Sudden blindness of an eye",
                 description: "Your veterinarian will try to localize the disease and will often refer you to a veterinary ophthalmologist.",
                 specie: specie_chicken)
-Symptom.create!(suggestion:"white spot in Chicken ",
+Symptom.create!(suggestion:"white spots on the eye ",
                 description: "Isolate her in an area where there is lots of soil",
                 specie: specie_chicken)
-Symptom.create!(suggestion:"Faint in chicken",
+Symptom.create!(suggestion:"sudden faint and weakness ",
                 description: "Most probably the chicken suffer from a weak blood irrigation to the muscles ",
                 specie: specie_chicken)
 Symptom.create!(suggestion:"Fall out of feathers ",
-                description: "This might be due to not enough space for the chicken to live. Need to provide her a bigger area to leave4 ",
+                description: "This might be due to not enough space for the chicken to live. Need to provide her a bigger area to leave ",
                 specie: specie_chicken)
-Symptom.create!(suggestion:"Agressivity in chicken",
-                description: "uncontrolled behaviour? Get your chicken in a dark place and let her clam by herself.",
+Symptom.create!(suggestion:"Uncontrolled and agressive behaviour ",
+                description: "Get your chicken in a dark place and let her clam by herself.",
                 specie: specie_chicken)
 
 
