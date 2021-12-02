@@ -47,7 +47,7 @@ const twilioInit = () => {
     leaveBtn.addEventListener('click', () => {
       videoRoom.disconnect();
       console.log(`Disconnected from Room ${videoRoom.name}`);
-      link.click()
+      // link.click()
     });
     // twilioAddParticipant(room);
   }).catch(error => {
