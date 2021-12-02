@@ -6,7 +6,8 @@ class ConsultationsController < ApplicationController
 
   def new
     @consultation = Consultation.new
-    # @animal = Animal.find(:animal_id)
+    @veterinarians = User.where(is_veterinarian: true)
+    @animals = current_user.animals
   end
 
   def create
@@ -34,7 +35,7 @@ class ConsultationsController < ApplicationController
     private
   
   def consultation_params
-    params.require(:consultation).permit(:animal_id, :user_id)
+    params.permit(:animal_id, :user_id)
 
   end
 
