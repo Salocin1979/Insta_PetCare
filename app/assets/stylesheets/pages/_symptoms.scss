@@ -1,0 +1,22 @@
+.card {
+    background-color: var(--background);
+    box-shadow: 6px 7px 22px -4px rgba(0,0,0,0.44);
+    border-radius: 30px;
+    padding: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.card-header {
+  background-color: white;
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    span {
+    margin-right: 6px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  }
+}
