@@ -1,0 +1,31 @@
+.card-input-element {
+    display: none;
+}
+  
+.card-input {
+    width: 135px;
+    height: 130px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 0 1px 1px black;
+    position: relative;
+}
+  
+.card-input:hover {
+    cursor: pointer;
+}
+  
+.card-input-element:checked + .card-input {
+    box-shadow: 0 0 1px 1px red;
+}
+  
+.card-heading {
+    font-size: 20px;
+}
+  
+.card-body {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 12px;
+}

@@ -7,30 +7,33 @@
       </div>
     </header>
     <main>
-      <%= simple_form_for [@animal, @user, @consultation] do |f| %>
-        <div class= "popular section-wrapper">
-          <%= f.association :animal, selected: @animal %>
-          <%# <%= f.association :user, :collection => User.where(is_veterinarian: true), label: "Available vet", label_method: :first_name %>
-        </div>
+  <form action="/consultations" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class= "popular section-wrapper">
-      <p> Available Vets</p>
-      <%# <% @users.each do |user| %> 
-      <%if current_user.photo.attached?%>
-         <%= cl_image_tag current_user.photo.key, height: 150, width: 200, crop: :fill %>
-      <% end %>
-      <%# <% end %>
+      <label for="animals">Choose your pet:</label>
+
+        <select name="animal_id" id="animals">
+           <% @animals.each do |animal| %>
+              <option value="<%= animal.id %>"><%= animal.name %></option>
+          <% end %>
+         </select>
       </div>
-      <div>
-        <%= f.submit "Submit", class: "btn btn-success"%>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="categories section-wrapper">
-        <div class="flex-header">
-          <%= link_to "Please Log In", new_user_session_path%></a>
-        </div>
+      <label for="users">Available vet:</label>
+      <div class= "popular section-wrapper">
+        <% @veterinarians.each do |user| %>
+          <label>
+          <h3><%= user.first_name %></h3>
+            <input type="radio" value="<%= user.id %>" name="user_id" class="card-input-element" />
+            <div class="card-input" >
+              <%if user.photo.attached?%>
+                <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill %>
+              <% end %>
+            </div>
+          </label>
+        <% end %>
       </div>
-    </main>
-  <% end %>
+      <input type="submit" value="Valider" class="" >
+    </form>
 </div>
+<% end %>
 </div>
