@@ -7,9 +7,11 @@
       <div class="participant">
       </div>
       <video id="userVideo" autoplay muted="true" ></video>
-      <button id='leave-btn'>
-        <%= link_to "Leave", root_path, class: "nav-link" %>
-      </button>
+
+
+
+
+
     </div>
   <% else %>
     <div class="categories section-wrapper">
@@ -20,3 +22,11 @@
   </main>
 <% end %>
 <%# <%= @consultation.user == current_user ? @animal.user.email : @booking.user.email %>
+
+        <div class="nav-consultation">
+          <button>
+            <%= link_to root_path do %>
+              <%= image_tag "icon-leave.png", :alt => "call icone" %>
+            <% end %>
+          </button>
+        </div>
