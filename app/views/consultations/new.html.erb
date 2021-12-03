@@ -7,33 +7,34 @@
       </div>
     </header>
     <main>
-  <form action="/consultations" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <div class= "popular section-wrapper">
-      <label for="animals">Choose your pet:</label>
-
-        <select name="animal_id" id="animals">
-           <% @animals.each do |animal| %>
+      <form action="/consultations" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <label class="form-input" for="animals">Choose your pet:</label>
+        <div class= "popular section-wrapper">
+          <select class="select-pet" name="animal_id" id="animals">
+            <% @animals.each do |animal| %>
               <option value="<%= animal.id %>"><%= animal.name %></option>
-          <% end %>
-         </select>
+            <% end %>
+          </select>
       </div>
-      <label for="users">Available vet:</label>
+      <label class="form-input" for="users">Available vet:</label>
       <div class= "popular section-wrapper">
         <% @veterinarians.each do |user| %>
-          <label>
-          <h3><%= user.first_name %></h3>
-            <input type="radio" value="<%= user.id %>" name="user_id" class="card-input-element" />
-            <div class="card-input" >
-              <%if user.photo.attached?%>
-                <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill %>
-              <% end %>
-            </div>
-          </label>
-        <% end %>
-      </div>
-      <input type="submit" value="Valider" class="" >
-    </form>
-</div>
-<% end %>
+          <label class="card-label">
+          <input type="radio" value="<%= user.id %>" name="user_id" class="card-input-element" />
+          <p><%= user.first_name %></p>
+              <div class="card-input" class="img-vet">
+                <%if user.photo.attached?%>
+                  <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill %>
+                <% end %>
+              </div>
+            </label>
+          <% end %>
+        </div>
+        <div class="call-action">
+        <input type="submit" value="Call Now !" class="btn btn-success" >
+        </div>
+      </form>
+    </div>
+  <% end %>
 </div>
