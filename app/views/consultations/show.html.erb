@@ -23,6 +23,19 @@
 <% end %>
 <%# <%= @consultation.user == current_user ? @animal.user.email : @booking.user.email %>
 
+
+<div class="bottom-nav">
+  <div class="bottom-inner">
+    <div class="bottom-main">
+      <% if user_signed_in? %>
+        <div class="nav-items">
+          <div class="nav-item">
+            <%= link_to root_path do %>
+              <%= image_tag "icon-home.png", :alt => "home icone" %>
+              <span>My Profile</span>
+            <% end %>
+          </div>
+        </div>
         <div class="nav-consultation">
           <button>
             <%= link_to root_path do %>
@@ -30,3 +43,23 @@
             <% end %>
           </button>
         </div>
+        <div class="nav-items">
+          <div class="nav-item">
+            <% if current_user.is_veterinarian %>
+              <%= link_to consultations_path do %>
+                <%= image_tag "icon-meds.png", :alt => "call icone" %>
+                <span>Consultations</span>
+              <% end %>
+            <% else %>
+              <%= link_to animals_path do %>
+                <%= image_tag "icon-prescription.png", :alt => "symptoms" %>
+                <span>Symptoms</span>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
