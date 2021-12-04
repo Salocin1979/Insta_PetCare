@@ -15,10 +15,10 @@
           </tr>
           <% @prescriptions.each do |prescription| %>
             <tr>
-              <td><i class="icon-calendar"></i><%= prescription.id %></td>     
+              <td><i class="icon-calendar"></i><%= prescription.id %></td>
               <td><i class="icon-calendar"></i><%= prescription.date %></td>
               <td><i class="icon-calendar"></i><%= prescription.consultation.animal.name %></td>
-              <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription)   do %> <i class="fas fa-external-link-alt"></i><% end %></td>  
+              <td> <%= link_to consultation_prescription_path(prescription.consultation, prescription)   do %> <i class="fas fa-external-link-alt"></i><% end %></td>
               <td> <%= link_to prescription_path(prescription) , method: :delete,  data: { confirm: "Are you sure?" } do %> <i class="fa fa-trash fa-1x"></i> <% end %></td>
             </tr>
           <% end %>
@@ -26,3 +26,4 @@
       </div>
     </div>
 </div>
+<%= render 'shared/footernavbar' %>
